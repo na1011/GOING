@@ -120,7 +120,7 @@
                                 </ul>
                             </div>
                             <div class="button header-button">
-                                <a href="search.html" class="btn">여행지 검색</a>
+                                <a href="search" class="btn">여행지 검색</a>
                             </div>
                         </nav> <!-- navbar -->
                     </div>

@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/")
-public class HomeController extends HttpServlet {
+@WebServlet("/search")
+public class SearchController extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-        String viewPath = "/WEB-INF/view/index.jsp";
+        String viewPath = "/WEB-INF/view/member/search.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
         dispatcher.forward(req, resp);
 	}
