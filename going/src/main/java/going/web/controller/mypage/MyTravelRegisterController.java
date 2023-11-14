@@ -7,7 +7,7 @@ import going.web.dispatcherservlet.MyController;
 public class MyTravelRegisterController implements MyController {
 
 	@Override
-	public String process(Map<String, String> requestParam, Map<String, Object> myModel) {
+	public String process(Map<String, String> paramMap, Map<String, Object> model) {
 		return "travelRegister";
 	}
 

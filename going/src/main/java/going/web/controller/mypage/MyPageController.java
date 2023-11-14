@@ -7,10 +7,7 @@ import going.web.dispatcherservlet.MyController;
 public class MyPageController implements MyController {
 
 	@Override
-	public String process(Map<String, String> requestParam, Map<String, Object> myModel) {
-		
-		myModel.put("test", "안녕하세요.");
-		
+	public String process(Map<String, String> paramMap, Map<String, Object> model) {
 		return "home";
 	}
 

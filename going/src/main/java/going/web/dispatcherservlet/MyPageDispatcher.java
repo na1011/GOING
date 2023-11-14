@@ -37,13 +37,13 @@ public class MyPageDispatcher extends HttpServlet {
 		}
 		
 		Map<String, String> paramMap = createParamMap(request);
-		Map<String, Object> myModel = new HashMap<>();
+		Map<String, Object> model = new HashMap<>();
 		
-		String viewName = controller.process(paramMap, myModel);
-		System.out.println(requestURI + " , " + viewName + " , " + myModel.values());
+		String viewName = controller.process(paramMap, model);
+		System.out.println(requestURI + " , " + viewName);
 		
 		MyView view = viewResolver(viewName);
-		view.render(myModel, request, response);
+		view.render(model, request, response);
 	}
 	
 	
