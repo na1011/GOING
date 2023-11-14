@@ -29,10 +29,10 @@
                             <h3 style="font-size: 23px;">바로가기</h3>
                             <ul style="padding-left: 15px;">
                                 <li><a href="search.html">여행지 검색</a></li>
+                                <li><a href="/myPage/home">마이페이지</a></li>
                                 <li><a href="myReserve.html">예약 관리</a></li>
                                 <li><a href="javascript:void(0)">장바구니</a></li>
                                 <li><a href="Sign_up.html">회원가입</a></li>
-                                <li><a href="javascript:void(0)">1대1 문의</a></li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->

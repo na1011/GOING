@@ -1,4 +1,4 @@
-package going.web.controller;
+package going.web.controller.home;
 
 import java.io.IOException;
 
@@ -13,11 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 public class HomeController extends HttpServlet {
 
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-        String viewPath = "/WEB-INF/view/index.jsp";
-        RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
-        dispatcher.forward(req, resp);
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String viewPath = "/WEB-INF/view/index.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
+		dispatcher.forward(request, response);
 	}
-	
+
 }
