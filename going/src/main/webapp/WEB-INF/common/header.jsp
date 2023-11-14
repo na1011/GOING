@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/tiny-slider.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/glightbox.min.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css" />
+    
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/custom.css" />
 
 <!-- 	<style>
         @font-face {
@@ -73,7 +75,7 @@
                 <div class="col-lg-12">
                     <div class="nav-inner">
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href="/">
                                 <img src="${pageContext.request.contextPath}/resources/images/logo/colorlogo.png" alt="Logo">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
@@ -93,7 +95,7 @@
                                         <a href="#" aria-label="Toggle navigation">고객센터</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="myPage.html" aria-label="Toggle navigation">마이페이지</a>
+                                        <a href="/myPage/home" aria-label="Toggle navigation">마이페이지</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="javascript:void(0)"
