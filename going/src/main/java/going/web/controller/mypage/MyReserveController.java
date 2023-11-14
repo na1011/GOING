@@ -7,7 +7,7 @@ import going.web.dispatcherservlet.MyController;
 public class MyReserveController implements MyController {
 
 	@Override
-	public String process(Map<String, String> paramMap, Map<String, Object> model) {
+	public String process(Map<String, String> requestParam, Map<String, Object> myModel) {
 		return "reserve";
 	}
 

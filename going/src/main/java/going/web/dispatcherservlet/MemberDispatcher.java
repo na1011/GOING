@@ -10,18 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import going.web.controller.mypage.MyPageController;
-import going.web.controller.mypage.MyPaymentHistoryController;
-import going.web.controller.mypage.MyReserveController;
-import going.web.controller.mypage.MyTravelRegisterController;
+import going.web.controller.member.SignUp;
+import going.web.controller.member.paramTest;
 import going.web.view.MyView;
 
-@WebServlet("/myPage/*")
-public class MyPageDispatcher extends HttpServlet {
+@WebServlet("/member/*")
+public class MemberDispatcher extends HttpServlet {
 	
 	private Map<String, MyController> controllerMap = new HashMap<>();
 
-	public MyPageDispatcher() {
+	public MemberDispatcher() {
 		initHandlerMappingMap();
 	}
 
@@ -36,10 +34,10 @@ public class MyPageDispatcher extends HttpServlet {
 			return;
 		}
 		
-		Map<String, String> paramMap = createParamMap(request);
+		Map<String, String> requestParam = createParamMap(request);
 		Map<String, Object> myModel = new HashMap<>();
 		
-		String viewName = controller.process(paramMap, myModel);
+		String viewName = controller.process(requestParam, myModel);
 		System.out.println(requestURI + " , " + viewName + " , " + myModel.values());
 		
 		MyView view = viewResolver(viewName);
@@ -57,14 +55,12 @@ public class MyPageDispatcher extends HttpServlet {
 	}
 	
 	private MyView viewResolver(String viewName) {
-		return new MyView("/WEB-INF/view/myPage/" + viewName + ".jsp");
+		return new MyView("/WEB-INF/view/member/" + viewName + ".jsp");
 	}
 	
 	private void initHandlerMappingMap() {
-		controllerMap.put("/myPage/home", new MyPageController());
-		controllerMap.put("/myPage/history", new MyPaymentHistoryController());
-		controllerMap.put("/myPage/reserve", new MyReserveController());
-		controllerMap.put("/myPage/travelRegister", new MyTravelRegisterController());
+		controllerMap.put("/member/register", new SignUp());
+		controllerMap.put("/member/test", new paramTest());
 	}
 
 }
