@@ -8,7 +8,7 @@ public class MyReserveController implements MyController {
 
 	@Override
 	public String process(Map<String, String> paramMap, Map<String, Object> model) {
-		return "reserve";
+		return "myPage/reserve";
 	}
 
 }

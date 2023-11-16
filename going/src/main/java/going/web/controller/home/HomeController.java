@@ -1,22 +1,15 @@
 package going.web.controller.home;
 
-import java.io.IOException;
+import java.util.Map;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import going.web.dispatcherservlet.MyController;
 
-@WebServlet("/")
-public class HomeController extends HttpServlet {
+public class HomeController implements MyController {
 
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String viewPath = "/WEB-INF/view/index.jsp";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
-		dispatcher.forward(request, response);
+	public String process(Map<String, String> paramMap, Map<String, Object> model) {
+		return "index";
 	}
+
 
 }

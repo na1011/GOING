@@ -10,18 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import going.web.controller.home.HomeController;
 import going.web.controller.mypage.MyPageController;
 import going.web.controller.mypage.MyPaymentHistoryController;
 import going.web.controller.mypage.MyReserveController;
 import going.web.controller.mypage.MyTravelRegisterController;
 import going.web.view.MyView;
 
-@WebServlet("/myPage/*")
-public class MyPageDispatcher extends HttpServlet {
+@WebServlet("/")
+public class MyDispatcher extends HttpServlet {
 	
 	private Map<String, MyController> controllerMap = new HashMap<>();
 
-	public MyPageDispatcher() {
+	public MyDispatcher() {
 		initHandlerMappingMap();
 	}
 
@@ -31,8 +32,9 @@ public class MyPageDispatcher extends HttpServlet {
 		String requestURI = request.getRequestURI();
 		
 		MyController controller = controllerMap.get(requestURI);
+		System.out.println("controller == " + controller);
 		if (controller == null) {
-			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 			return;
 		}
 		
@@ -57,10 +59,11 @@ public class MyPageDispatcher extends HttpServlet {
 	}
 	
 	private MyView viewResolver(String viewName) {
-		return new MyView("/WEB-INF/view/myPage/" + viewName + ".jsp");
+		return new MyView("/WEB-INF/view/" + viewName + ".jsp");
 	}
 	
 	private void initHandlerMappingMap() {
+		controllerMap.put("/", new HomeController());
 		controllerMap.put("/myPage/home", new MyPageController());
 		controllerMap.put("/myPage/history", new MyPaymentHistoryController());
 		controllerMap.put("/myPage/reserve", new MyReserveController());
