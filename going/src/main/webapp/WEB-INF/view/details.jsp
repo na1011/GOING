@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 
 <%@ include file="/WEB-INF/common/header.jsp"%>
-
 <style>
         .ldh_btn1 {
             width: 20px; 
@@ -414,5 +413,61 @@
         </div>
     </section>
     <!-- End Item Details -->
+    <script type="text/javascript">
+
+        const current = document.getElementById("current");
+        const opacity = 0.3;
+        const imgs = document.querySelectorAll(".img");
+
+        let t_index = 1;
+        const t_src = "resources/images/item-details/image";
+
+        let t_keyframe = [
+            {opacity: 0.4},
+            {opacity: 1}
+        ];
+
+        let t_options = {
+            duration: 500,
+            easing: "ease-in-out",
+        };
+
+        imgs.forEach((img, index) => {
+            img.addEventListener("click", (e) => {
+                t_index = index + 1;
+                imgs.forEach(img => {
+                    img.style.opacity = 1;
+                });
+                current.src = e.target.src;
+                current.animate(t_keyframe, t_options);
+                e.target.style.opacity = opacity;
+            });
+        });
+
+        tSlides(t_index);
+
+        function tIndex(n) {
+            tSlides(t_index += n);
+        }
+
+        function tSlides(n) {
+            if (t_index > imgs.length) {
+                t_index = 1;
+            }
+            if (t_index < 1) {
+                t_index = imgs.length;
+            }
+
+            let cur_img = document.querySelector(".t" + t_index);
+            
+            current.src = t_src + t_index + ".png";
+            current.animate(t_keyframe, t_options);
+            imgs.forEach(img => {
+                    img.style.opacity = 1;
+                });
+            cur_img.style.opacity = opacity;
+        }
+
+    </script>
 
 <%@ include file="/WEB-INF/common/footer.jsp"%>
