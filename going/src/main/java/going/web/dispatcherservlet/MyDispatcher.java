@@ -11,10 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import going.web.controller.home.HomeController;
+import going.web.controller.items.ItemDetailController;
+import going.web.controller.member.SignInController;
+import going.web.controller.member.SignUpController;
 import going.web.controller.mypage.MyPageController;
 import going.web.controller.mypage.MyPaymentHistoryController;
 import going.web.controller.mypage.MyReserveController;
 import going.web.controller.mypage.MyTravelRegisterController;
+import going.web.controller.search.SearchController;
 import going.web.view.MyView;
 
 @WebServlet("/")
@@ -32,7 +36,6 @@ public class MyDispatcher extends HttpServlet {
 		String requestURI = request.getRequestURI();
 		
 		MyController controller = controllerMap.get(requestURI);
-		System.out.println("controller == " + controller);
 		if (controller == null) {
 			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 			return;
@@ -42,7 +45,7 @@ public class MyDispatcher extends HttpServlet {
 		Map<String, Object> model = new HashMap<>();
 		
 		String viewName = controller.process(paramMap, model);
-		System.out.println(requestURI + " , " + viewName);
+//		System.out.println(requestURI + " , " + viewName);
 		
 		MyView view = viewResolver(viewName);
 		view.render(model, request, response);
@@ -68,6 +71,10 @@ public class MyDispatcher extends HttpServlet {
 		controllerMap.put("/myPage/history", new MyPaymentHistoryController());
 		controllerMap.put("/myPage/reserve", new MyReserveController());
 		controllerMap.put("/myPage/travelRegister", new MyTravelRegisterController());
+		controllerMap.put("/member/register", new SignUpController());
+		controllerMap.put("/member/login", new SignInController());
+		controllerMap.put("/search", new SearchController());
+		controllerMap.put("/item/detail", new ItemDetailController());
 	}
 
 }

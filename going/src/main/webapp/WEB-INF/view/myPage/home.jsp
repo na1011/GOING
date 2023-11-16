@@ -15,7 +15,7 @@
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-nav">
                         <li><a href="/">Home</a></li>
-                        <li>${test }</li>
+                        <li>마이페이지</li>
                     </ul>
                 </div>
             </div>

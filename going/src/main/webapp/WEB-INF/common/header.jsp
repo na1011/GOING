@@ -104,9 +104,9 @@
                                             aria-label="Toggle navigation">여행관리</a>
                                         <ul class="sub-menu collapse" id="submenu-1-3">
                                             <li class="nav-item"><a href="#">장바구니</a></li>
-                                            <li class="nav-item"><a href="./myReserve.html">예약내역</a></li>
-                                            <li class="nav-item"><a href="./myPaymentHistory.html">리뷰관리</a></li>
-                                            <li class="nav-item"><a href="./travelRegister.html">여행지 등록(사업자 전용)</a></li>
+                                            <li class="nav-item"><a href="/myPage/reserve">예약내역</a></li>
+                                            <li class="nav-item"><a href="/myPage/history">결제내역</a></li>
+                                            <li class="nav-item"><a href="/myPage/travelRegister">여행지 등록(사업자 전용)</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -114,7 +114,7 @@
                             <div class="login-button">
                                 <ul>
                                     <li>
-                                        <a href="Sign_In.html"><i class="lni lni-enter"></i> 로그인</a>
+                                        <a href="/member/login"><i class="lni lni-enter"></i> 로그인</a>
                                     </li>
                                     <li>
                                         <a href="/member/register"><i class="lni lni-user"></i> 회원가입</a>
@@ -122,7 +122,7 @@
                                 </ul>
                             </div>
                             <div class="button header-button">
-                                <a href="search.html" class="btn">여행지 검색</a>
+                                <a href="/search" class="btn">여행지 검색</a>
                             </div>
                         </nav> <!-- navbar -->
                     </div>
