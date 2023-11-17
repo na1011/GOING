@@ -23,7 +23,7 @@
     </div>
     <!-- End Breadcrumbs -->
 
-    <!-- Start Category 왼쪽 카테고리 -->
+    <!-- 검색 메뉴 시작 -->
     <section class="category-page section">
         <div class="container">
             <div class="row">
@@ -158,6 +158,8 @@
                         <!-- End Single Widget -->
                     </div>
                 </div>
+                <!-- 검색 메뉴 끝 -->
+                
                 <div class="col-lg-9 col-md-8 col-12">
                     <div class="category-grid-list">
                         <div class="row">
@@ -183,13 +185,18 @@
                                     <div class="tab-pane fade show active" id="nav-grid" role="tabpanel"
                                         aria-labelledby="nav-list-tab">
                                         <div class="row">
+                                            
+                                            <!-- 검색 결과 시작 -->
+                                            
+                                            <c:forEach var="trv" items="${itemList}">
+                                            <form action="${pageContext.request.contextPath}/item/detail" method="get" name="${trv.id}">
+                                            <input type="hidden" name=itemId value=${trv.id}>
                                             <div class="col-lg-12 col-md-12 col-12">
-                                                <!-- Start Single Item -->
                                                 <div class="single-item-grid">
                                                     <div class="row align-items-center">
                                                         <div class="col-lg-5 col-md-7 col-12">
                                                             <div class="image">
-                                                                <a href="/item/detail"><img src="${pageContext.request.contextPath}/resources/images/search/japan.png" alt="#"></a>
+                                                                <a href="javascript:void(0);" onclick="document.forms['${trv.id}'].submit();"><img src="${pageContext.request.contextPath}/resources/images/search/japan.png" alt="#"></a>
                                                                 <i class=" cross-badge lni lni-bolt"></i>
                                                                 <span class="flat-badge sale">할인</span>
                                                             </div>
@@ -198,150 +205,27 @@
                                                             <div class="content">
                                                                 <a href="javascript:void(0)" class="tag">해외여행</a>
                                                                 <h3 class="title">
-                                                                    <a href="/item/detail">일본 홋카이도 3박4일</a>
+                                                                    <a href="javascript:void(0);" onclick="document.forms['${trv.id}'].submit();">${trv.itemName}</a>
                                                                 </h3>
-                                                                <p class="location"><a href="javascript:void(0)"><i
-                                                                            class="lni lni-map-marker">
+                                                                <p class="location"><a href="javascript:void(0);" onclick="document.forms['${trv.id}'].submit();">
+                                                                		<i class="lni lni-map-marker">
                                                                         </i>삿포로,오타루,후라노,비에이</a></p>
                                                                 <ul class="info">
-                                                                    <li class="price">1,549,900원</li>
-                                                                    <li class="like"><a href="javascript:void(0)"><i
-                                                                                class="lni lni-heart"></i></a>
+                                                                    <li class="price"><fmt:formatNumber value="${trv.price}" pattern="#,###" />원</li>
+                                                                    <li class="like"><a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
                                                                     </li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- End Single Item -->
                                             </div>
-                                            <div class="col-lg-12 col-md-12 col-12">
-                                                <!-- Start Single Item -->
-                                                <div class="single-item-grid">
-                                                    <div class="row align-items-center">
-                                                        <div class="col-lg-5 col-md-7 col-12">
-                                                            <div class="image">
-                                                                <a href="/item/detail"><img src="${pageContext.request.contextPath}/resources/images/search/bangkok.png" alt="#"></a>
-                                                                <i class=" cross-badge lni lni-bolt"></i>
-                                                                <span class="flat-badge sale">할인</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-7 col-md-5 col-12">
-                                                            <div class="content">
-                                                                <a href="javascript:void(0)" class="tag">해외여행</a>
-                                                                <h3 class="title">
-                                                                    <a href="/item/detail">태국 방콕/파티야 3박5일</a>
-                                                                </h3>
-                                                                <p class="location"><a href="javascript:void(0)"><i
-                                                                            class="lni lni-map-marker">
-                                                                        </i>방콕-파타야</a></p>
-                                                                <ul class="info">
-                                                                    <li class="price">1,359,000원</li>
-                                                                    <li class="like"><a href="javascript:void(0)"><i
-                                                                                class="lni lni-heart"></i></a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End Single Item -->
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 col-12">
-                                                <!-- Start Single Item -->
-                                                <div class="single-item-grid">
-                                                    <div class="row align-items-center">
-                                                        <div class="col-lg-5 col-md-7 col-12">
-                                                            <div class="image">
-                                                                <a href="/item/detail"><img src="${pageContext.request.contextPath}/resources/images/search/japan2.png" alt="#"></a>
-                                                                <i class=" cross-badge lni lni-bolt"></i>
-                                                                <span class="flat-badge rent">인기</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-7 col-md-5 col-12">
-                                                            <div class="content">
-                                                                <a href="javascript:void(0)" class="tag">해외여행</a>
-                                                                <h3 class="title">
-                                                                    <a href="/item/detail">일본 규수 3박4일</a>
-                                                                </h3>
-                                                                <p class="location"><a href="javascript:void(0)"><i
-                                                                            class="lni lni-map-marker">
-                                                                        </i>규수</a></p>
-                                                                <ul class="info">
-                                                                    <li class="price">699,900원</li>
-                                                                    <li class="like"><a href="javascript:void(0)"><i
-                                                                                class="lni lni-heart"></i></a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End Single Item -->
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 col-12">
-                                                <!-- Start Single Item -->
-                                                <div class="single-item-grid">
-                                                    <div class="row align-items-center">
-                                                        <div class="col-lg-5 col-md-7 col-12">
-                                                            <div class="image">
-                                                                <a href="/item/detail"><img src="${pageContext.request.contextPath}/resources/images/search/euro.png" alt="#"></a>
-                                                                <i class=" cross-badge lni lni-bolt"></i>
-                                                                <span class="flat-badge sale">할인</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-7 col-md-5 col-12">
-                                                            <div class="content">
-                                                                <a href="javascript:void(0)" class="tag">해외여행</a>
-                                                                <h3 class="title">
-                                                                    <a href="/item/detail">동유럽3국 9박10일</a>
-                                                                </h3>
-                                                                <p class="location"><a href="javascript:void(0)"><i
-                                                                            class="lni lni-map-marker">
-                                                                        </i>체코,오스트리아,헝가리</a></p>
-                                                                <ul class="info">
-                                                                    <li class="price">2,949,000원</li>
-                                                                    <li class="like"><a href="javascript:void(0)"><i
-                                                                                class="lni lni-heart"></i></a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End Single Item -->
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 col-12">
-                                                <!-- Start Single Item -->
-                                                <div class="single-item-grid">
-                                                    <div class="row align-items-center">
-                                                        <div class="col-lg-5 col-md-7 col-12">
-                                                            <div class="image">
-                                                                <a href="/item/detail"><img src="${pageContext.request.contextPath}/resources/images/search/sydeni.png" alt="#"></a>
-                                                                <i class=" cross-badge lni lni-bolt"></i>
-                                                                <span class="flat-badge rent">인기</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-7 col-md-5 col-12">
-                                                            <div class="content">
-                                                                <a href="javascript:void(0)" class="tag">해외여행</a>
-                                                                <h3 class="title">
-                                                                    <a href="/item/detail">시드니 4박6일</a>
-                                                                </h3>
-                                                                <p class="location"><a href="javascript:void(0)"><i class="lni lni-map-marker">
-                                                                        </i>포트스티븐스,블루마운틴</a></p>
-                                                                <ul class="info">
-                                                                    <li class="price">1,690,000원</li>
-                                                                    <li class="like"><a href="javascript:void(0)"><i
-                                                                                class="lni lni-heart"></i></a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End Single Item -->
-                                            </div>
+                                            
+                                            </form>
+                                            </c:forEach>
+                                            
+                                            <!-- 검색 결과 끝 -->
+                                            
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
@@ -369,7 +253,11 @@
     </section>
     <!-- End Category 마지막 라인-->
 
-    <!-- Start Footer Area -->
+    <script>
+    	function resultSubmit(int id) {
+    		document.getElementById(id).submit();
+    	}
+    </script>
     
  	<%@ include file="/WEB-INF/common/footer.jsp"%>
  	

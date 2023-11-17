@@ -20,17 +20,7 @@ public class HomeServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String addr = request.getParameter("addr");
 		MyView mv = new MyView("/index");
-
-		HttpSession session = request.getSession(false);
-		if (session != null && addr != null) {
-			MemberVO loginMember = (MemberVO) session.getAttribute(SessionConst.LOGIN_MEMBER);
-			request.setAttribute("loginMember", loginMember);
-			mv.setViewName("/" + addr);
-			mv.render(request, response);
-		} else {
-			mv.render(request, response);
-		}
+		mv.render(request, response);
 	}
 }

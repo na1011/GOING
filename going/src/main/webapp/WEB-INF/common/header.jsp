@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -30,29 +32,6 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css" />
     
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/custom.css" />
-
-<!-- 	<style>
-        @font-face {
-		  font-family: 'LineIcons';
-		  src: url('${pageContext.request.contextPath}/resources/fonts/LineIcons.eot') format('embedded-opentype'),
-		  	url('${pageContext.request.contextPath}/resources/fonts/LineIcons.woff2') format('woff2'),
-		  	url('${pageContext.request.contextPath}/resources/fonts/LineIcons.woff') format('woff'), 
-		  	url('${pageContext.request.contextPath}/resources/fonts/LineIcons.ttf') format('truetype'), 
-		  	url('${pageContext.request.contextPath}/resources/fonts/LineIcons.svg') format('svg');
-		  font-weight: normal;
-		  font-style: normal;
-		}
-		
-		.lni {
-		  display: inline-block;
-		  font: normal normal normal 1em/1 'LineIcons';
-		  speak: none;
-		  text-transform: none;
-		  /* Better Font Rendering */
-		  -webkit-font-smoothing: antialiased;
-		  -moz-osx-font-smoothing: grayscale;
-		}
-    </style> -->
 
 </head>
 
@@ -113,12 +92,27 @@
                             </div> <!-- navbar collapse -->
                             <div class="login-button">
                                 <ul>
+                                <!-- 비로그인 사용자 -->
+                                <c:if test="${sessionScope.loginMember == null}">
                                     <li>
                                         <a href="/member/login"><i class="lni lni-enter"></i> 로그인</a>
                                     </li>
+                                
                                     <li>
                                         <a href="/member/register"><i class="lni lni-user"></i> 회원가입</a>
                                     </li>
+                                </c:if>    
+                                
+                                <!-- 로그인 사용자 -->
+                                <c:if test="${sessionScope.loginMember != null}">
+                                    <li>
+                                        <a href="/logout"><i class="lni lni-enter"></i> 로그아웃</a>
+                                    </li>
+                                
+                                    <li>
+                                        <a href="#"><i class="lni lni-user"></i> 내 정보</a>
+                                    </li>
+                                </c:if>  
                                 </ul>
                             </div>
                             <div class="button header-button">

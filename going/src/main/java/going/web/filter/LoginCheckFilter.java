@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import going.domain.member.SessionConst;
 
-@WebFilter(value = {"/myPage/*", "/item/*"})
+@WebFilter(value = {"/myPage/*"})
 public class LoginCheckFilter implements Filter {
 
 	@Override
@@ -32,8 +32,8 @@ public class LoginCheckFilter implements Filter {
 				httpResponse.sendRedirect("/member/login?addr=" + requestURI);
 				return;
 			}
-			
 			chain.doFilter(request, response);
+			
 		} catch (Exception e) {
 			throw e;
 		}
