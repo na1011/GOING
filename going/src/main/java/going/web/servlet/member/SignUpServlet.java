@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import going.domain.member.MemberRepository;
 import going.domain.member.MemberVO;
+import going.domain.view.MyView;
 
 @WebServlet("/member/register")
 public class SignUpServlet extends HttpServlet {
@@ -19,11 +20,8 @@ public class SignUpServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String requestURI = request.getRequestURI();	
-		
-		String viewPath = viewResolver(requestURI);
-		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
-		dispatcher.forward(request, response);
+		MyView mv = new MyView(request.getRequestURI());
+		mv.render(request, response);
 	}
 
 	@Override
@@ -35,9 +33,5 @@ public class SignUpServlet extends HttpServlet {
 		memberRepository.save(member);
 		
 		response.sendRedirect("/member/login");
-	}
-	
-	private String viewResolver(String viewName) {
-		return "/WEB-INF/view" + viewName + ".jsp";
 	}
 }

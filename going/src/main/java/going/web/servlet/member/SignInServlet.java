@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import going.domain.member.MemberVO;
 import going.domain.member.SessionConst;
+import going.domain.view.MyView;
 
 @WebServlet("/member/login")
 public class SignInServlet extends HttpServlet {
@@ -20,11 +21,8 @@ public class SignInServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String requestURI = request.getRequestURI();	
-		
-		String viewPath = viewResolver(requestURI);
-		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
-		dispatcher.forward(request, response);
+		MyView mv = new MyView(request.getRequestURI());
+		mv.render(request, response);
 	}
 
 	@Override
@@ -34,14 +32,14 @@ public class SignInServlet extends HttpServlet {
 		
 		MemberVO loginMember = service.login(email, password);
 		
-		HttpSession session = request.getSession();
-		session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
-		
-		String addr = request.getParameter("addr");
-		response.sendRedirect("/" + addr);
-	}
-	
-	private String viewResolver(String viewName) {
-		return "/WEB-INF/view" + viewName + ".jsp";
+		if (loginMember != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
+			
+			String addr = request.getParameter("addr");
+			response.sendRedirect("/?addr=" + addr);
+		} else {
+			response.sendRedirect("/member/login");
+		}
 	}
 }

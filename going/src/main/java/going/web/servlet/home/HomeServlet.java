@@ -12,29 +12,25 @@ import javax.servlet.http.HttpSession;
 
 import going.domain.member.MemberVO;
 import going.domain.member.SessionConst;
+import going.domain.view.MyView;
 
 @WebServlet("/")
 public class HomeServlet extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/index.jsp");
-			dispatcher.forward(request, response);
-		}
 		
-		MemberVO loginMember = (MemberVO) session.getAttribute(SessionConst.LOGIN_MEMBER);
 		String addr = request.getParameter("addr");
-		
-		if (request.getParameter("addr") != null || loginMember != null) {
-			request.setAttribute("loginMember", loginMember);
-			response.sendRedirect("/" + addr);
-		}
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/index.jsp");
-		dispatcher.forward(request, response);
-	}
+		MyView mv = new MyView("/index");
 
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			MemberVO loginMember = (MemberVO) session.getAttribute(SessionConst.LOGIN_MEMBER);
+			request.setAttribute("loginMember", loginMember);
+			mv.setViewName("/" + addr);
+			mv.render(request, response);
+		} else {
+			mv.render(request, response);
+		}
+	}
 }
