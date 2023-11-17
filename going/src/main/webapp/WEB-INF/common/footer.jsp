@@ -28,7 +28,7 @@
                         <div class="single-footer f-link">
                             <h3 style="font-size: 23px;">바로가기</h3>
                             <ul style="padding-left: 15px;">
-                                <li><a href="/search">여행지 검색</a></li>
+                                <li><a href="/search/main">여행지 검색</a></li>
                                 <li><a href="/myPage/home">마이페이지</a></li>
                                 <li><a href="/myPage/reserve">예약 관리</a></li>
                                 <li><a href="javascript:void(0)">장바구니</a></li>

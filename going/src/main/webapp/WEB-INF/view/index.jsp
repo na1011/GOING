@@ -82,7 +82,7 @@
 
                                 <div class="col-lg-2 col-md-2 col-12 p-0">
                                     <div class="search-btn button">
-                                        <a href="/search" style="width: 100%;"><button class="btn"><i class="lni lni-search-alt"></i> Going</button></a>
+                                        <a href="/search/main" style="width: 100%;"><button class="btn"><i class="lni lni-search-alt"></i> Going</button></a>
                                     </div>
                                 </div>
                             </div>

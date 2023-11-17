@@ -106,7 +106,7 @@
                                             <li class="nav-item"><a href="#">장바구니</a></li>
                                             <li class="nav-item"><a href="/myPage/reserve">예약내역</a></li>
                                             <li class="nav-item"><a href="/myPage/history">결제내역</a></li>
-                                            <li class="nav-item"><a href="/myPage/travelRegister">여행지 등록(사업자 전용)</a></li>
+                                            <li class="nav-item"><a href="/myPage/register">여행지 등록(사업자 전용)</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -122,7 +122,7 @@
                                 </ul>
                             </div>
                             <div class="button header-button">
-                                <a href="/search" class="btn">여행지 검색</a>
+                                <a href="/search/main" class="btn">여행지 검색</a>
                             </div>
                         </nav> <!-- navbar -->
                     </div>

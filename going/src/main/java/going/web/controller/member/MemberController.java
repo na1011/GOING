@@ -1,4 +1,4 @@
-package going.web.controller.home;
+package going.web.controller.member;
 
 import java.io.IOException;
 
@@ -9,15 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/")
-public class HomeController extends HttpServlet {
+@WebServlet("/member/*")
+public class MemberController extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
-		String viewPath = "/WEB-INF/view/index.jsp";	
+		
+		String requestURI = request.getRequestURI();		
+		String viewPath = viewResolver(request.getRequestURI());
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
 		dispatcher.forward(request, response);
+	}
+
+	private String viewResolver(String viewName) {
+		return "/WEB-INF/view" + viewName + ".jsp";
 	}
 
 }

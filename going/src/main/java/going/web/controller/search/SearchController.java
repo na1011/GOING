@@ -1,14 +1,29 @@
 package going.web.controller.search;
 
-import java.util.Map;
+import java.io.IOException;
 
-import going.web.dispatcherservlet.MyController;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-public class SearchController implements MyController {
-
+@WebServlet("/search/*")
+public class SearchController extends HttpServlet {
+	
 	@Override
-	public String process(Map<String, String> requestParam, Map<String, Object> myModel) {
-		return "search/search";
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String requestURI = request.getRequestURI();		
+		String viewPath = viewResolver(request.getRequestURI());
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
+		dispatcher.forward(request, response);
+	}
+
+	private String viewResolver(String viewName) {
+		return "/WEB-INF/view" + viewName + ".jsp";
 	}
 
 }

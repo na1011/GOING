@@ -15,7 +15,7 @@
             <li><a  href="/myPage/reserve"><i class="lni lni-dashboard"></i>
                     예약/결제 관리</a></li>
             <li><a href="/myPage/history"><i class="lni lni-heart"></i> 결제 내역</a></li>
-            <li><a href="/myPage/travelRegister"><i class="lni lni-circle-plus"></i> 상품등록(사업자)</a></li>
+            <li><a href="/myPage/register"><i class="lni lni-circle-plus"></i> 상품등록(사업자)</a></li>
             <li><a href="bookmarked-items.html"><i class="lni lni-bookmark"></i> 장바구니</a></li>
             <li><a href="messages.html"><i class="lni lni-envelope"></i> 1:1 문의</a></li>
             <li><a href="delete-account.html"><i class="lni lni-trash"></i> 회원탈퇴</a></li>
