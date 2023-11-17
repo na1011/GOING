@@ -60,7 +60,7 @@
                             </nav>
                         </div>
                         <div class="d1">
-                            <form action="/member/test" method="post"
+                            <form action="/member/register" method="post"
                                 style=" border: 1px solid #c9c9c9; border-top: none; padding: 40px;">
                                 <div style="margin:  10px;">
 
@@ -115,7 +115,7 @@
                             </form>
                         </div>
                         <div class="d2">
-                            <form action="/member/test" method="post"
+                            <form action="/member/register" method="post"
                                 style="border: 1px solid #c9c9c9; border-top: none; padding: 40px;">
                                 <div style="margin:  10px;">
                                 </div>

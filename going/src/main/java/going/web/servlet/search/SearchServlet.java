@@ -1,4 +1,4 @@
-package going.web.controller.search;
+package going.web.servlet.search;
 
 import java.io.IOException;
 
@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/search/*")
-public class SearchController extends HttpServlet {
+public class SearchServlet extends HttpServlet {
 	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String requestURI = request.getRequestURI();		
-		String viewPath = viewResolver(request.getRequestURI());
+		String viewPath = viewResolver(requestURI);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
 		dispatcher.forward(request, response);
