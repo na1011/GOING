@@ -175,6 +175,7 @@
     </section>
     <!-- End Registration section -->
     
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script>
 	    $(document).ready(function () {
 	        $('.d1').show(); //페이지를 로드할 때 표시할 요소

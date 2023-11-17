@@ -1,8 +1,10 @@
+@charset "UTF-8";
+
 body {
   font-family: Helvetica
 }
 
-/* (시작) 마이페이지 + 슬라이드 + 예약 및 결제 */
+/* (�떆�옉) 留덉씠�럹�씠吏� + �뒳�씪�씠�뱶 + �삁�빟 諛� 寃곗젣 */
 
 .count-input > input {
   width: 75%;
@@ -286,10 +288,10 @@ body {
   left: 10px;
   top: 40px;
 }
-/* (끝) 마이페이지 + 슬라이드 + 예약 및 결제 */
+/* (�걹) 留덉씠�럹�씠吏� + �뒳�씪�씠�뱶 + �삁�빟 諛� 寃곗젣 */
 
 
-/* 상품 qna 작성 */
+/* �긽�뭹 qna �옉�꽦 */
 @media (min-width: 576px) {
   .modal-dialog {
       max-width: 600px;
@@ -320,7 +322,7 @@ body {
   padding: 15px 30px;
 }
 
-/* Q&A 게시판 YWJ */
+/* Q&A 寃뚯떆�뙋 YWJ */
 .b_all{ 
   top: 50%;
   left: 50%;
@@ -336,7 +338,7 @@ body {
 }
 .b_talk{
   color: black;
-  text-decoration: none;/*밑줄 제거*/
+  text-decoration: none;/*諛묒쨪 �젣嫄�*/
   font-weight: bold;
 }
 .b_make{
@@ -357,11 +359,11 @@ body {
   color: white;
 }
 .b_opt{
-  float: right;/*셀렉트 옵션 오른쪽으로 보내기 */
-  padding: 5px 15px;/*안쪽 공간*/
+  float: right;/*���젆�듃 �샃�뀡 �삤瑜몄そ�쑝濡� 蹂대궡湲� */
+  padding: 5px 15px;/*�븞履� 怨듦컙*/
 }
 
-    /* 게시판 형태 */
+    /* 寃뚯떆�뙋 �삎�깭 */
 .b_board {
   width: 100%;
 }
@@ -378,14 +380,14 @@ body {
 }
 
 .b_board-list {
-  list-style: none; /* 리스트 스타일 제거 */
+  list-style: none; /* 由ъ뒪�듃 �뒪���씪 �젣嫄� */
   padding: 0;
   font-size: 0.9em;
 }
 
 .b_board-item {
-  display: flex; /* 좌우로 정렬을 위해 flex 사용 */
-  justify-content: space-between; /* 좌우 정렬 설정 */
+  display: flex; /* 醫뚯슦濡� �젙�젹�쓣 �쐞�빐 flex �궗�슜 */
+  justify-content: space-between; /* 醫뚯슦 �젙�젹 �꽕�젙 */
   margin: 2px 0;
   padding: 8px;
   text-align: center;
@@ -412,9 +414,9 @@ body {
   color: black;
   text-decoration: none;
 }
-/* Q&A 게시판 YWJ */
+/* Q&A 寃뚯떆�뙋 YWJ */
 
-/* 리뷰 작성 CJH */
+/* 由щ럭 �옉�꽦 CJH */
 .modal-body.review-modal-body {
   background-color: #fff;
   text-align: center;
@@ -496,10 +498,10 @@ input[type=radio]:checked ~ label{
   -webkit-text-stroke-color: #2b2a29;
 }
 
-/* (끝) 리뷰 작성 CJH */
+/* (�걹) 由щ럭 �옉�꽦 CJH */
 
 
-/* 리뷰 목록 LDH */
+/* 由щ럭 紐⑸줉 LDH */
 .ldh_moy {
   border: 1px solid #f5f9fd;
   padding: 30px;
@@ -522,4 +524,4 @@ input[type=radio]:checked ~ label{
   padding: 10px;
   margin: 8px;
 }
-/* (끝) 리뷰 목록 LDH */
+/* (�걹) 由щ럭 紐⑸줉 LDH */

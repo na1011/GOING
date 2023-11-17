@@ -7,21 +7,12 @@
 <html lang="ko">
 
 <head>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>GOING - 여행검색 플랫폼</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/images/favicon.svg" />
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- Web Font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- ========================= CSS here ========================= -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" />
@@ -33,6 +24,12 @@
     
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/custom.css" />
 
+	<!-- Web Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -67,7 +64,7 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a class="active" href="index.html"
+                                        <a class="active" href="/"
                                             aria-label="Toggle navigation">Home</a>
                                     </li>
                                     <li class="nav-item">
@@ -92,27 +89,27 @@
                             </div> <!-- navbar collapse -->
                             <div class="login-button">
                                 <ul>
-                                <!-- 비로그인 사용자 -->
-                                <c:if test="${sessionScope.loginMember == null}">
-                                    <li>
-                                        <a href="/member/login"><i class="lni lni-enter"></i> 로그인</a>
-                                    </li>
+	                                <!-- 비로그인 사용자 -->
+	                                <c:if test="${sessionScope.loginMember == null}">
+	                                    <li>
+	                                        <a href="/member/login"><i class="lni lni-enter"></i> 로그인</a>
+	                                    </li>
+	                                
+	                                    <li>
+	                                        <a href="/member/register"><i class="lni lni-user"></i> 회원가입</a>
+	                                    </li>
+	                                </c:if>    
                                 
-                                    <li>
-                                        <a href="/member/register"><i class="lni lni-user"></i> 회원가입</a>
-                                    </li>
-                                </c:if>    
-                                
-                                <!-- 로그인 사용자 -->
-                                <c:if test="${sessionScope.loginMember != null}">
-                                    <li>
-                                        <a href="/logout"><i class="lni lni-enter"></i> 로그아웃</a>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="#"><i class="lni lni-user"></i> 내 정보</a>
-                                    </li>
-                                </c:if>  
+	                                <!-- 로그인 사용자 -->
+	                                <c:if test="${sessionScope.loginMember != null}">
+	                                    <li>
+	                                        <a href="/logout"><i class="lni lni-enter"></i> 로그아웃</a>
+	                                    </li>
+	                                
+	                                    <li>
+	                                        <a href="#"><i class="lni lni-user"></i> 내 정보</a>
+	                                    </li>
+	                                </c:if>  
                                 </ul>
                             </div>
                             <div class="button header-button">

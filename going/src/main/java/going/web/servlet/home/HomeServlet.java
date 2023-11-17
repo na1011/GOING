@@ -2,16 +2,12 @@ package going.web.servlet.home;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import going.domain.member.MemberVO;
-import going.domain.member.SessionConst;
 import going.domain.view.MyView;
 
 @WebServlet("/")
