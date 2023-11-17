@@ -15,7 +15,7 @@ public class HomeController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-        String viewPath = "/WEB-INF/view/index.jsp";
+        String viewPath = "/WEB-INF/member/Sign_up.jsp";
         RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
         dispatcher.forward(req, resp);
 	}
