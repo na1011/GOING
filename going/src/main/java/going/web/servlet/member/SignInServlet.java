@@ -43,8 +43,6 @@ public class SignInServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String addr = request.getParameter("addr");
 		
-		System.out.println("addr : " + addr);
-		
 		MemberVO loginMember = service.login(email, password);
 		
 		if (loginMember != null) {
