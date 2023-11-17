@@ -24,7 +24,7 @@ public class HomeServlet extends HttpServlet {
 		MyView mv = new MyView("/index");
 
 		HttpSession session = request.getSession(false);
-		if (session != null) {
+		if (session != null && addr != null) {
 			MemberVO loginMember = (MemberVO) session.getAttribute(SessionConst.LOGIN_MEMBER);
 			request.setAttribute("loginMember", loginMember);
 			mv.setViewName("/" + addr);

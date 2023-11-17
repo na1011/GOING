@@ -169,7 +169,7 @@
                         </div>
                         <div>
                             <div class="d1">
-                                <form action="#!" method="post"
+                                <form method="post"
                                     style="border: 1px solid #c9c9c9; border-top: none; padding: 40px;">
                                     <div class="form-group mt-4">
                                         <label>아이디</label>
@@ -211,7 +211,7 @@
                                 </form>
                             </div>
                             <div class="d2">
-                                <form action="#!" method="post"
+                                <form method="post"
                                     style="border: 1px solid #c9c9c9; border-top: none; padding: 40px;">
                                     <div class="form-group mt-4">
                                         <label>아이디</label>

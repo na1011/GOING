@@ -21,25 +21,38 @@ public class SignInServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession(false);
 		MyView mv = new MyView(request.getRequestURI());
-		mv.render(request, response);
+		
+		if (session != null) {
+			MemberVO loginMember = (MemberVO) session.getAttribute(SessionConst.LOGIN_MEMBER);
+			if (loginMember != null) {
+				response.sendRedirect("/");
+			} else {
+				mv.render(request, response);
+			}
+		} else {
+			mv.render(request, response);
+		}
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String addr = request.getParameter("addr");
+		
+		System.out.println("addr : " + addr);
 		
 		MemberVO loginMember = service.login(email, password);
 		
 		if (loginMember != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
-			
-			String addr = request.getParameter("addr");
-			response.sendRedirect("/?addr=" + addr);
+			response.sendRedirect("/" + addr);
 		} else {
-			response.sendRedirect("/member/login");
+			response.sendRedirect(addr != null ? "/member/login?addr=" + addr : "/member/login");
 		}
 	}
 }

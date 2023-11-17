@@ -36,7 +36,7 @@
                         <!-- Start Hero Text -->
                         <div class="section-heading">
                             <h2 class="wow fadeInUp" data-wow-delay=".3s">Welcome to GOING</h2>
-                            <p class="wow fadeInUp" data-wow-delay=".5s">세계의 여행지릃 한 곳에!</p>
+                            <p class="wow fadeInUp" data-wow-delay=".5s"><a href="${pageContext.request.contextPath}/resources/css/main.css">aa</a>세계의 여행지릃 한 곳에!</p>
                         </div>
                         <!-- End Search Form -->
                         <!-- Start Search Form -->
