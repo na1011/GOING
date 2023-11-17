@@ -176,7 +176,7 @@
     
  	<script type="text/javascript">
         $(document).ready(function () {
-            $('.d1').show(); //페이지를 로드할 때 표시할 요소
+            $('.d1').show(); //페이지를 로드할 때 표시할 요소.
             $('.d2').hide(); //페이지를 로드할 때 숨길 요소
             $('.di').css({ background: '#c9c9c9' });
             $('.show1').css({
