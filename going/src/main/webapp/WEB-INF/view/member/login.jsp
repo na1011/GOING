@@ -256,6 +256,7 @@
                     </div>
                 </div>
             </div>
+         </div>
     </section>
     <!-- end login section -->
 

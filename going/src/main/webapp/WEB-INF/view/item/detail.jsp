@@ -238,7 +238,6 @@
                                             <strong style="color: black; cursor: pointer;">'판매자 톡톡문의'</strong> 를 통해 판매자와
                                             간편하게 1:1상담도 가능합니다.
                                         </p>
-                                        </strong>
 
                                         <button type="button" class="btn btn-dark" data-bs-toggle="modal"
                                             data-bs-target="#staticBackdrop">

@@ -62,7 +62,8 @@
                                         </div>
                                     </div>
                                     <!-- End Cart List Title -->
-                                    <!-- Cart Single List list -->
+                                    
+                                    <!-- 목록 시작 -->
                                     <div class="cart-single-list">
                                         <div class="row align-items-center">
                                             <div class="col-lg-1 col-md-1 col-12 cart-imgs">
@@ -73,7 +74,7 @@
                                                 <h5 class="product-name"><a href="list-details.html">
                                                         태국 방콕/파티야 3박5일</a></h5>
                                                 <p class="location"><i class="lni lni-map-marker">
-                                                    </i>방콕-파타야</a></p>
+                                                    </i>방콕-파타야</p>
                                             </div>
                                             <div class="col-lg-2 col-md-2 col-12 cart-date">
                                                 <div class="count-input">
@@ -93,72 +94,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- End Single List list -->
-                                    <!-- Cart Single List list -->
-                                    <div class="cart-single-list">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-1 col-md-1 col-12 cart-imgs">
-                                                <a href="product-details.html"><img src="${pageContext.request.contextPath}/resources/images/search/japan.png"
-                                                        style="width: 100%;" alt="#"></a>
-                                            </div>
-                                            <div class="col-lg-4 col-md-3 col-12 cart-product-name">
-                                                <h5 class="product-name"><a href="product-details.html">
-                                                        일본 홋카이도 3박4일</a></h5>
-                                                <p class="location"><i class="lni lni-map-marker">
-                                                    </i>일본-홋카이도</a></p>
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-12 cart-date">
-                                                <div class="count-input">
-                                                    <input type="date" class="form-control" value="2023-10-20">
-                                                    <input type="date" class="form-control" value="2023-10-30">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-12">
-                                                <p>$1100.00</p>
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-12">
-                                                <p>—</p>
-                                            </div>
-                                            <div class="col-lg-1 col-md-2 col-12 cart-remove">
-                                                <a class="remove-item" href="javascript:void(0)"><i
-                                                        class="lni lni-close"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single List list -->
-                                    <!-- Cart Single List list -->
-                                    <div class="cart-single-list">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-1 col-md-1 col-12 cart-imgs">
-                                                <a href="product-details.html"><img
-                                                        src="${pageContext.request.contextPath}/resources/images/search/sydeni.png" style="width: 100%;"
-                                                        alt="#"></a>
-                                            </div>
-                                            <div class="col-lg-4 col-md-3 col-12 cart-product-name">
-                                                <h5 class="product-name"><a href="product-details.html">
-                                                        호주 시드니 4박 5일</a></h5>
-                                                <p class="location"><i class="lni lni-map-marker">
-                                                    </i>호주-시드니</a></p>
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-12 cart-date">
-                                                <div class="count-input">
-                                                    <input type="date" class="form-control" value="2023-10-20">
-                                                    <input type="date" class="form-control" value="2023-10-30">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-12">
-                                                <p>$550.00</p>
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-12">
-                                                <p>—</p>
-                                            </div>
-                                            <div class="col-lg-1 col-md-2 col-12 cart-remove">
-                                                <a class="remove-item" href="javascript:void(0)"><i
-                                                        class="lni lni-close"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single List list -->
+                                    <!-- 목록 끝 -->
+                                    
                                 </div>
                                 <div class="row">
                                     <div class="col-12">

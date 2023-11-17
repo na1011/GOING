@@ -57,7 +57,8 @@
                                     </div>
                                 </div>
                                 <!-- End List Title -->
-                                <!-- Start Single List -->
+                                
+                                <!-- 목록 시작 -->
                                 <div class="single-item-list">
                                     <div class="row align-items-center">
                                         <div class="col-lg-5 col-md-5 col-12">
@@ -66,8 +67,8 @@
                                                 <div class="content">
                                                     <h3 class="title"><a href="javascript:void(0)">태국 방콕/파티야 3박5일</a>
                                                     </h3>
-                                                    <span class="price"><i class="lni lni-map-marker">
-                                                        </i>방콕-파타야</a></p>
+                                                    <p class="location"><i class="lni lni-map-marker">
+                                                        </i>방콕-파타야</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -115,7 +116,7 @@
                                                                 <strong class="review_modal_middle mt-4">어떤 점이
                                                                     좋았나요?</strong>
                                                                 <textarea class="col-auto form-control review-area mt-3"
-                                                                    type="text" id="reviewContents"
+                                                                    id="reviewContents"
                                                                     placeholder="최소 10자 이상 입력해주세요"></textarea>
                                                             </form>
                                                         </div>
@@ -132,235 +133,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End Single List -->
-                                <!-- Start Single List -->
-                                <div class="single-item-list">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-5 col-md-5 col-12">
-                                            <div class="item-image">
-                                                <img src="${pageContext.request.contextPath}/resources/images/search/bangkok.png">
-                                                <div class="content">
-                                                    <h3 class="title"><a href="javascript:void(0)">태국 방콕/파티야 3박5일</a>
-                                                    </h3>
-                                                    <span class="price"><i class="lni lni-map-marker">
-                                                        </i>방콕-파타야</a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="count-input">
-                                                <input type="date" class="form-control" value="2023-10-20">
-                                                <input type="date" class="form-control" value="2023-10-30">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <p>OO투어</p>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                                data-bs-target="#staticBackdrop">
-                                                리뷰 작성
-                                            </button>
-
-                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <h5 class="modal-qna-title" id="exampleModalLabel">리뷰 작성</h5>
-
-                                                        <div class="modal-body review-modal-body">
-                                                            <form class="mb-3" name="reviewForm" id="reviewForm"
-                                                                method="post">
-                                                                <fieldset class="review-filedset">
-                                                                    <strong class="review_modal_middle">여행은
-                                                                        만족하셨나요?</strong>
-                                                                    <p class="star-ratings">
-                                                                        <input type="radio" name="reviewStar" value="5"
-                                                                            id="rate1"><label for="rate1">★</label>
-                                                                        <input type="radio" name="reviewStar" value="4"
-                                                                            id="rate2"><label for="rate2">★</label>
-                                                                        <input type="radio" name="reviewStar" value="3"
-                                                                            id="rate3"><label for="rate3">★</label>
-                                                                        <input type="radio" name="reviewStar" value="2"
-                                                                            id="rate4"><label for="rate4">★</label>
-                                                                        <input type="radio" name="reviewStar" value="1"
-                                                                            id="rate5"><label for="rate5">★</label>
-                                                                    </p>
-                                                                </fieldset>
-                                                                <strong class="review_modal_middle mt-4">어떤 점이
-                                                                    좋았나요?</strong>
-                                                                <textarea class="col-auto form-control review-area mt-3"
-                                                                    type="text" id="reviewContents"
-                                                                    placeholder="최소 10자 이상 입력해주세요"></textarea>
-                                                            </form>
-                                                        </div>
-
-                                                        <div class="modal-footer" style="justify-content: center;">
-                                                            <button type="button" class="btn btn-primary">등록</button>
-                                                            <button type="button" class="btn btn-danger"
-                                                                data-bs-dismiss="modal">취소</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single List -->
-                                <!-- Start Single List -->
-                                <div class="single-item-list">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-5 col-md-5 col-12">
-                                            <div class="item-image">
-                                                <img src="${pageContext.request.contextPath}/resources/images/search/bangkok.png">
-                                                <div class="content">
-                                                    <h3 class="title"><a href="javascript:void(0)">태국 방콕/파티야 3박5일</a>
-                                                    </h3>
-                                                    <span class="price"><i class="lni lni-map-marker">
-                                                        </i>방콕-파타야</a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="count-input">
-                                                <input type="date" class="form-control" value="2023-10-20">
-                                                <input type="date" class="form-control" value="2023-10-30">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <p>OO투어</p>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                                data-bs-target="#staticBackdrop">
-                                                리뷰 작성
-                                            </button>
-
-                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <h5 class="modal-qna-title" id="exampleModalLabel">리뷰 작성</h5>
-
-                                                        <div class="modal-body review-modal-body">
-                                                            <form class="mb-3" name="reviewForm" id="reviewForm"
-                                                                method="post">
-                                                                <fieldset class="review-filedset">
-                                                                    <strong class="review_modal_middle">여행은
-                                                                        만족하셨나요?</strong>
-                                                                    <p class="star-ratings">
-                                                                        <input type="radio" name="reviewStar" value="5"
-                                                                            id="rate1"><label for="rate1">★</label>
-                                                                        <input type="radio" name="reviewStar" value="4"
-                                                                            id="rate2"><label for="rate2">★</label>
-                                                                        <input type="radio" name="reviewStar" value="3"
-                                                                            id="rate3"><label for="rate3">★</label>
-                                                                        <input type="radio" name="reviewStar" value="2"
-                                                                            id="rate4"><label for="rate4">★</label>
-                                                                        <input type="radio" name="reviewStar" value="1"
-                                                                            id="rate5"><label for="rate5">★</label>
-                                                                    </p>
-                                                                </fieldset>
-                                                                <strong class="review_modal_middle mt-4">어떤 점이
-                                                                    좋았나요?</strong>
-                                                                <textarea class="col-auto form-control review-area mt-3"
-                                                                    type="text" id="reviewContents"
-                                                                    placeholder="최소 10자 이상 입력해주세요"></textarea>
-                                                            </form>
-                                                        </div>
-
-                                                        <div class="modal-footer" style="justify-content: center;">
-                                                            <button type="button" class="btn btn-primary">등록</button>
-                                                            <button type="button" class="btn btn-danger"
-                                                                data-bs-dismiss="modal">취소</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single List -->
-                                <!-- Start Single List -->
-                                <div class="single-item-list">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-5 col-md-5 col-12">
-                                            <div class="item-image">
-                                                <img src="${pageContext.request.contextPath}/resources/images/search/bangkok.png">
-                                                <div class="content">
-                                                    <h3 class="title"><a href="javascript:void(0)">태국 방콕/파티야 3박5일</a>
-                                                    </h3>
-                                                    <span class="price"><i class="lni lni-map-marker">
-                                                        </i>방콕-파타야</a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="count-input">
-                                                <input type="date" class="form-control" value="2023-10-20">
-                                                <input type="date" class="form-control" value="2023-10-30">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <p>OO투어</p>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                                data-bs-target="#staticBackdrop">
-                                                리뷰 작성
-                                            </button>
-
-                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <h5 class="modal-qna-title" id="exampleModalLabel">리뷰 작성</h5>
-
-                                                        <div class="modal-body review-modal-body">
-                                                            <form class="mb-3" name="reviewForm" id="reviewForm"
-                                                                method="post">
-                                                                <fieldset class="review-filedset">
-                                                                    <strong class="review_modal_middle">여행은
-                                                                        만족하셨나요?</strong>
-                                                                    <p class="star-ratings">
-                                                                        <input type="radio" name="reviewStar" value="5"
-                                                                            id="rate1"><label for="rate1">★</label>
-                                                                        <input type="radio" name="reviewStar" value="4"
-                                                                            id="rate2"><label for="rate2">★</label>
-                                                                        <input type="radio" name="reviewStar" value="3"
-                                                                            id="rate3"><label for="rate3">★</label>
-                                                                        <input type="radio" name="reviewStar" value="2"
-                                                                            id="rate4"><label for="rate4">★</label>
-                                                                        <input type="radio" name="reviewStar" value="1"
-                                                                            id="rate5"><label for="rate5">★</label>
-                                                                    </p>
-                                                                </fieldset>
-                                                                <strong class="review_modal_middle mt-4">어떤 점이
-                                                                    좋았나요?</strong>
-                                                                <textarea class="col-auto form-control review-area mt-3"
-                                                                    type="text" id="reviewContents"
-                                                                    placeholder="최소 10자 이상 입력해주세요"></textarea>
-                                                            </form>
-                                                        </div>
-
-                                                        <div class="modal-footer" style="justify-content: center;">
-                                                            <button type="button" class="btn btn-primary">등록</button>
-                                                            <button type="button" class="btn btn-danger"
-                                                                data-bs-dismiss="modal">취소</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single List -->
+                                <!-- 목록 끝 -->
+ 
+ 
                                 <!-- Pagination -->
                                 <div class="pagination left">
                                     <ul class="pagination-list">
