@@ -13,9 +13,7 @@ public class ItemRepository {
 	private static final ItemRepository instance = new ItemRepository();
 	
 	public static ItemRepository getInstance() {
-		save(new ItemVO("일본 홋카이도 3박4일", 1549900));
-		save(new ItemVO("호주 시드니 4박 5일", 1750000));
-		save(new ItemVO("미국 뉴욕 4박 5일", 2100000));
+		initItem();
 		return instance;
 	}
 	
@@ -35,7 +33,14 @@ public class ItemRepository {
 		return new ArrayList<>(store.values());
 	}
 	
+	
 	public void clearStore() {
 		store.clear();
+	}
+	
+	public static void initItem() {
+		for(int i=1; i<=13; i++) {
+			save(new ItemVO("테스트", i));
+		}
 	}
 }

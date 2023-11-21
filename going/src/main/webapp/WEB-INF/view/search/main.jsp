@@ -229,7 +229,20 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
-                                                <!-- Pagination -->
+                                            
+                                                <!-- 페이징 시작 -->
+                                                <div class="pagination left">
+                                                    <ul class="pagination-list">
+	                                                    <c:forEach var="num" begin="1" end="${pageNum}">
+	                                                        <li><a href="/search/main?page=${num}">${num}</a></li>
+	                                                    </c:forEach>
+	                                                    
+                                                        <li><a href="javascript:void(0)"><i class="lni lni-chevron-right"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                                <!-- 페이징 끝 -->
+                                            
+                                                <!--  
                                                 <div class="pagination left">
                                                     <ul class="pagination-list">
                                                         <li><a href="javascript:void(0)">1</a></li>
@@ -239,7 +252,8 @@
                                                         <li><a href="javascript:void(0)"><i class="lni lni-chevron-right"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <!--/ End Pagination -->
+                                                  -->
+                                                
                                             </div>
                                         </div>
                                     </div>
