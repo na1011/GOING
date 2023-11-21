@@ -19,14 +19,14 @@ import going.domain.view.MyView;
 @WebServlet("/search/main")
 public class SearchServlet extends HttpServlet {
 	
-	ItemRepository itemRepository = ItemRepository.getInstance(); // new ItemRepository()
+	ItemRepository itemRepository = ItemRepository.getInstance();
 	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		List<ItemVO> findAll = itemRepository.findAll();
 		
-		int page = Integer.valueOf(Optional.ofNullable(request.getParameter("page")).orElseGet(() -> "1"));
+		int page = Integer.valueOf(Optional.ofNullable(request.getParameter("page")).orElse("1"));
 		int allSize = findAll.size();
 		int displayCount = 3;
 
