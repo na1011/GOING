@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.IntStream;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,26 +26,18 @@ public class SearchServlet extends HttpServlet {
 		
 		List<ItemVO> findAll = itemRepository.findAll();
 		
-		int page = 1;
-		String pageTemp = request.getParameter("page");
-		
-		if(pageTemp != null) {
-			page = Integer.parseInt(pageTemp);
-		}
-		
-		System.out.println("page : " + page);
+		int page = Integer.valueOf(Optional.ofNullable(request.getParameter("page")).orElseGet(() -> "1"));
+		int displayCount = 3;
 
-		int pageNum = (int) Math.ceil((double)findAll.size() / (double)3);
-		int endIndex = (int) Math.ceil( (double)page / (double)3 * 3 ) * 3;
-		int startIndex = endIndex - 2;
+		int pageNum = (int) Math.ceil( (double)findAll.size() / (double)displayCount );
+		int endIndex = page * displayCount;
+		int startIndex = endIndex - (displayCount - 1);
 		
 		if (endIndex > findAll.size()) {
 			endIndex = findAll.size();
 		}
 		
-		System.out.println("findAll.size() : " + findAll.size() + "\npageNum : " + pageNum +"\nendIndex : " + endIndex +"\nstartIndex : " + startIndex);
-		
-		List<ItemVO> itemList = new ArrayList<>();
+		List<ItemVO> itemList = new ArrayList<>(3);
 		for(int i=startIndex; i<=endIndex; i++) {
 			itemList.add(findAll.get(i-1));
 		}
