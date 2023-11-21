@@ -27,20 +27,25 @@ public class SearchServlet extends HttpServlet {
 		List<ItemVO> findAll = itemRepository.findAll();
 		
 		int page = Integer.valueOf(Optional.ofNullable(request.getParameter("page")).orElseGet(() -> "1"));
+		int allSize = findAll.size();
 		int displayCount = 3;
 
-		int pageNum = (int) Math.ceil( (double)findAll.size() / (double)displayCount );
+		int pageNum = (int) Math.ceil( (double)allSize / (double)displayCount );
 		int endIndex = page * displayCount;
 		int startIndex = endIndex - (displayCount - 1);
 		
-		if (endIndex > findAll.size()) {
-			endIndex = findAll.size();
+		if (endIndex > allSize) {
+			endIndex = allSize;
 		}
 		
 		List<ItemVO> itemList = new ArrayList<>(3);
 		for(int i=startIndex; i<=endIndex; i++) {
 			itemList.add(findAll.get(i-1));
 		}
+		
+		request.setAttribute("allSize", allSize);
+		request.setAttribute("startIndex", startIndex);
+		request.setAttribute("endIndex", endIndex);
 		
 		request.setAttribute("itemList", itemList);
 		request.setAttribute("pageNum", pageNum);

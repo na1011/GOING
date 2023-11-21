@@ -167,7 +167,7 @@
                                 <div class="category-grid-topbar">
                                     <div class="row align-items-center">
                                         <div class="col-lg-6 col-md-6 col-12">
-                                            <h3 class="title">발견된 21개의 항목 중 1-12개를 보여줍니다</h3>
+                                            <h3 class="title">발견된 ${allSize }개의 항목 중 ${startIndex }-${endIndex }개를 보여줍니다</h3>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <nav>
