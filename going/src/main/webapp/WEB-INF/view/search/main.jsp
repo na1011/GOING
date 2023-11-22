@@ -231,7 +231,7 @@
                                             <div class="col-12">
                                             
                                                 <!-- 페이징 시작 -->
-                                                <div class="pagination left">
+                                                <div class="pagination center">
                                                     <ul class="pagination-list">
                                                     	<c:if test="${prev}">
 	                                                    	<li><a href="/search/main?page=${startPage - 1}"><i class="lni lni-chevron-left"></i></a></li>
