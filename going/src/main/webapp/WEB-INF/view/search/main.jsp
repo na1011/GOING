@@ -233,11 +233,17 @@
                                                 <!-- 페이징 시작 -->
                                                 <div class="pagination left">
                                                     <ul class="pagination-list">
-	                                                    <c:forEach var="num" begin="1" end="${pageNum}">
+                                                    	<c:if test="${prev}">
+	                                                    	<li><a href="/search/main?page=${startPage - 1}"><i class="lni lni-chevron-left"></i></a></li>
+                                                    	</c:if>
+                                                    
+	                                                    <c:forEach var="num" begin="${startPage }" end="${endPage}">
 	                                                        <li><a href="/search/main?page=${num}">${num}</a></li>
 	                                                    </c:forEach>
 	                                                    
-                                                        <li><a href="javascript:void(0)"><i class="lni lni-chevron-right"></i></a></li>
+	                                                    <c:if test="${next}">
+	                                                        <li><a href="/search/main?page=${endPage + 1}"><i class="lni lni-chevron-right"></i></a></li>
+	                                                    </c:if>
                                                     </ul>
                                                 </div>
                                                 <!-- 페이징 끝 -->

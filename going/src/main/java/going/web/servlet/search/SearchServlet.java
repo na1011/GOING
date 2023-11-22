@@ -25,6 +25,7 @@ public class SearchServlet extends HttpServlet {
 		
 		List<ItemVO> findAll = itemRepository.findAll();
 		
+		// 페이징 로직
 		int page = Integer.valueOf(Optional.ofNullable(request.getParameter("page")).orElse("1"));
 		int allSize = findAll.size();
 		int displayCount = 3;
@@ -42,12 +43,27 @@ public class SearchServlet extends HttpServlet {
 			itemList.add(findAll.get(i-1));
 		}
 		
+		
+		// 페이징 5페이지 씩 처리하는 로직
+		int displayPaging = 5;
+		int endPage = (int) Math.ceil( (double)page / (double)displayPaging ) * displayPaging;
+		int startPage = endPage - (displayPaging - 1);
+		
+		boolean prev = startPage == 1 ? false : true;
+		boolean next = endPage < pageNum ? true : false;
+						//10		//6
+		
 		request.setAttribute("allSize", allSize);
 		request.setAttribute("startIndex", startIndex);
 		request.setAttribute("endIndex", endIndex);
 		
 		request.setAttribute("itemList", itemList);
 		request.setAttribute("pageNum", pageNum);
+
+		request.setAttribute("prev", prev);
+		request.setAttribute("next", next);
+		request.setAttribute("startPage", startPage);
+		request.setAttribute("endPage", endPage);
 		
 		MyView mv = new MyView(request.getRequestURI());
 		mv.render(request, response);

@@ -39,7 +39,7 @@ public class ItemRepository {
 	}
 	
 	public static void initItem() {
-		for(int i=1; i<=13; i++) {
+		for(int i=1; i<=29; i++) {
 			save(new ItemVO("테스트", i));
 		}
 	}
