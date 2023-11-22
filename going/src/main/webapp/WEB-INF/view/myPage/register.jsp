@@ -371,7 +371,7 @@
                                                                 <label>출발일자*</label>
                                                                 <td class="td_KYS">
                                                                     <input type="date" id="travel_date"
-                                                                        name="travel_date" required />
+                                                                        name="travel_date" />
                                                                 </td>
                                                             </div>
                                                         </div>
@@ -380,7 +380,7 @@
                                                                 <label>도착일자*</label>
                                                                 <td class="td_KYS">
                                                                     <input type="date" id="travel_date"
-                                                                        name="travel_date" required />
+                                                                        name="travel_date" />
                                                                 </td>
                                                             </div>
                                                         </div>
