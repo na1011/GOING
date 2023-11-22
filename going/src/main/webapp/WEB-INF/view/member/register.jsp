@@ -108,6 +108,7 @@
                                 </div>
 
                                 <div class="button">
+                                	<input type="hidden" name="role" value="customer">
                                     <button type="submit" class="btn">가입하기</button>
                                 </div>
                                 <p class="outer-link">이미 아이디가 있으신가요? <a href="login.html"> 로그인 하기</a>
@@ -162,6 +163,7 @@
                                 </div>
 
                                 <div class="button">
+                                	<input type="hidden" name="role" value="business">
                                     <button type="submit" class="btn">가입하기</button>
                                 </div>
                                 <p class="outer-link">이미 아이디가 있으신가요? <a href="login.html"> 로그인 하기</a>

@@ -23,18 +23,17 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession(false);
-		MyView mv = new MyView(request.getRequestURI());
 		
 		if (session != null) {
 			MemberVO loginMember = (MemberVO) session.getAttribute(SessionConst.LOGIN_MEMBER);
 			if (loginMember != null) {
 				response.sendRedirect("/");
-			} else {
-				mv.render(request, response);
+				return;
 			}
-		} else {
-			mv.render(request, response);
 		}
+		
+		MyView mv = new MyView(request.getRequestURI());
+		mv.render(request, response);
 	}
 
 	@Override
@@ -49,9 +48,10 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
 			response.sendRedirect(addr != null ? "/" + addr : "/");
-		} else {
-			response.sendRedirect(addr != null ? "/member/login?addr=" + addr : "/member/login");
+			return;
 		}
+		
+		response.sendRedirect(addr != null ? "/member/login?addr=" + addr : "/member/login");
 	}
 	
 	public MemberVO login(String email, String password) {

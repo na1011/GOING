@@ -5,12 +5,14 @@ public class MemberVO {
 	private Long id;
 	private String email;
 	private String password;
+	private Role role;
 	
 	public MemberVO() {}
 
-	public MemberVO(String email, String password) {
+	public MemberVO(String email, String password, Role role) {
 		this.email = email;
 		this.password = password;
+		this.role = role;
 	}
 
 	public Long getId() {
@@ -35,6 +37,14 @@ public class MemberVO {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public Role getRole() {
+		return role;
+	}
+	
+	public void setRole(Role role) {
+		this.role = role;
 	}
 
 }

@@ -14,13 +14,16 @@ public class MemberRepository {
 	private static final MemberRepository instance = new MemberRepository();
 	
 	public static MemberRepository getInstance() {
-		save(new MemberVO("test@test.com", "1234"));
 		return instance;
 	}
 	
-	private MemberRepository() {}
+	private MemberRepository() {
+		save(new MemberVO("test@test.com", "1234", Role.CUSTOMER));
+		save(new MemberVO("busi@test.com", "1234", Role.BUSINESS));
+		save(new MemberVO("admin@test.com", "1234", Role.ADMIN));
+	}
 	
-	public static MemberVO save(MemberVO member) {
+	public MemberVO save(MemberVO member) {
 		member.setId(++sequence);
 		store.put(member.getId(), member);
 		return member;

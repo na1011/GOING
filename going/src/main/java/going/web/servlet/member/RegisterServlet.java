@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import going.domain.member.MemberRepository;
 import going.domain.member.MemberVO;
+import going.domain.member.Role;
 import going.domain.view.MyView;
 
 @WebServlet("/member/register")
@@ -27,8 +28,17 @@ public class RegisterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String role_tmp = request.getParameter("role");
+		
+		Role role = null;
+		
+		switch(role_tmp) {
+			case "customer": role = Role.CUSTOMER;
+			case "business": role = Role.BUSINESS;
+			default: role = Role.CUSTOMER;
+		}
 
-		MemberVO member = new MemberVO(email, password);
+		MemberVO member = new MemberVO(email, password, role);
 		memberRepository.save(member);
 		
 		response.sendRedirect("/member/login");

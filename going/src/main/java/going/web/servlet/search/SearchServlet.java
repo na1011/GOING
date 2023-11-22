@@ -25,12 +25,19 @@ public class SearchServlet extends HttpServlet {
 		
 		List<ItemVO> findAll = itemRepository.findAll();
 		
-		// 페이징 로직
 		int page = Integer.valueOf(Optional.ofNullable(request.getParameter("page")).orElse("1"));
 		int allSize = findAll.size();
 		int displayCount = 3;
 
+		// 전체 페이지 수보다 높은 페이지를 요청할 경우 메인으로 리다이렉트
 		int pageNum = (int) Math.ceil( (double)allSize / (double)displayCount );
+		
+		if (page > pageNum) {
+			response.sendRedirect("/search/main");
+			return;
+		}
+		
+		// 한 페이지에 표시될 컨텐츠의 시작과 끝
 		int endIndex = page * displayCount;
 		int startIndex = endIndex - (displayCount - 1);
 		
@@ -44,7 +51,7 @@ public class SearchServlet extends HttpServlet {
 		}
 		
 		
-		// 페이징 5페이지 씩 처리하는 로직
+		// 페이징을 5페이지 단위로 처리
 		int displayPaging = 5;
 		int endPage = (int) Math.ceil( (double)page / (double)displayPaging ) * displayPaging;
 		int startPage = endPage - (displayPaging - 1);
