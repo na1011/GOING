@@ -49,9 +49,12 @@ public class SearchServlet extends HttpServlet {
 		int endPage = (int) Math.ceil( (double)page / (double)displayPaging ) * displayPaging;
 		int startPage = endPage - (displayPaging - 1);
 		
+		if (endPage > pageNum) {
+			endPage = pageNum;
+		}
+		
 		boolean prev = startPage == 1 ? false : true;
 		boolean next = endPage < pageNum ? true : false;
-						//10		//6
 		
 		request.setAttribute("allSize", allSize);
 		request.setAttribute("startIndex", startIndex);

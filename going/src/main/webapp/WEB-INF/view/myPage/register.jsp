@@ -77,12 +77,13 @@
                                             </button>
                                         </div>
                                     </nav>
+                                    
+                                    <form class="default-form-style" method="post" action="/myPage/register">
                                     <div class="tab-content" id="nav-tabContent">
                                         <div class="tab-pane fade show active" id="nav-item-info" role="tabpanel"
                                             aria-labelledby="nav-item-info-tab">
                                             <!-- Start Post Ad Step One Content -->
                                             <div class="step-three-content">
-                                                <form class="default-form-style" method="post" action="#">
                                                     <div class="row">
                                                         <div class="col-lg-6 col-12">
                                                             <div class="form-group">
@@ -207,7 +208,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </form>
                                             </div>
                                             <!-- Start Post Ad Step One Content -->
                                         </div>
@@ -215,12 +215,11 @@
                                             aria-labelledby="nav-item-details-tab">
                                             <!-- Start Post Ad Step Two Content -->
                                             <div class="step-two-content">
-                                                <form class="default-form-style" method="post" action="#">
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <div class="form-group">
                                                                 <label>상품입력*</label>
-                                                                <input name="상품입력" type="text"
+                                                                <input name="itemName" type="text"
                                                                     placeholder="상품을 입력해주세요" />
                                                             </div>
                                                         </div>
@@ -359,7 +358,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </form>
                                             </div>
                                             <!-- Start Post Ad Step Two Content -->
                                         </div>
@@ -367,7 +365,6 @@
                                             aria-labelledby="nav-user-info-tab">
                                             <!-- Start Post Ad Step Three Content -->
                                             <div class="step-one-content">
-                                                <form class="default-form-style" method="post" action="#">
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <div class="form-group">
@@ -390,11 +387,9 @@
 
                                                         <div class="col-12">
                                                             <div class="form-group">
-                                                                <form>
-                                                                    <label for="discount">할인율 (%)</label>
-                                                                    <input type="number" id="discount" name="discount"
-                                                                        placeholder="할인율입력" />
-                                                                </form>
+                                                                <label for="discount">할인율 (%)</label>
+                                                                <input type="number" id="discount" name="discount"
+                                                                    placeholder="할인율입력" />
                                                             </div>
                                                         </div>
                                                         <div class="col-12">
@@ -409,11 +404,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </form>
+                                                
                                             </div>
                                             <!-- Start Post Ad Step Three Content -->
                                         </div>
                                     </div>
+                                    </form>
                                 </div>
                                 <!-- End Post Ad Tab -->
                             </div>

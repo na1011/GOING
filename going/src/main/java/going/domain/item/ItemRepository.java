@@ -13,13 +13,12 @@ public class ItemRepository {
 	private static final ItemRepository instance = new ItemRepository();
 	
 	public static ItemRepository getInstance() {
-		initItem();
 		return instance;
 	}
 	
 	private ItemRepository() {}
 
-	public static ItemVO save(ItemVO item) {
+	public ItemVO save(ItemVO item) {
 		item.setId(++sequence);
 		store.put(item.getId(), item);
 		return item;
@@ -38,9 +37,9 @@ public class ItemRepository {
 		store.clear();
 	}
 	
-	public static void initItem() {
-		for(int i=1; i<=29; i++) {
-			save(new ItemVO("테스트", i));
-		}
-	}
+//	public static void initItem() {
+//		for(int i=1; i<=2; i++) {
+//			save(new ItemVO("테스트", i));
+//		}
+//	}
 }

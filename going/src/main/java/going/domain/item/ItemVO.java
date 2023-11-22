@@ -9,7 +9,6 @@ public class ItemVO {
 	public ItemVO() {}
 	
 	public ItemVO(String itemName, Integer price) {
-		super();
 		this.itemName = itemName;
 		this.price = price;
 	}
