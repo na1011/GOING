@@ -15,7 +15,7 @@ import going.domain.member.SessionConst;
 import going.domain.view.MyView;
 
 @WebServlet("/member/login")
-public class SignInServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	
 	MemberRepository memberRepository = MemberRepository.getInstance();
 

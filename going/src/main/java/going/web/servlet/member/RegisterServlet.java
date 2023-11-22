@@ -13,7 +13,7 @@ import going.domain.member.MemberVO;
 import going.domain.view.MyView;
 
 @WebServlet("/member/register")
-public class SignUpServlet extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
 	
 	MemberRepository memberRepository = MemberRepository.getInstance();
 

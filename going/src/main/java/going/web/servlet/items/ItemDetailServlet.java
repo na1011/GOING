@@ -12,8 +12,8 @@ import going.domain.item.ItemRepository;
 import going.domain.item.ItemVO;
 import going.domain.view.MyView;
 
-@WebServlet("/item/detail/*")
-public class ItemServlet extends HttpServlet {
+@WebServlet("/item/detail")
+public class ItemDetailServlet extends HttpServlet {
 	
 	ItemRepository itemRepository = ItemRepository.getInstance();
 
