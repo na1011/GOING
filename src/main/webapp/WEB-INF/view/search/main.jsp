@@ -269,11 +269,5 @@
     </section>
     <!-- End Category 마지막 라인-->
 
-    <script>
-    	function resultSubmit(int id) {
-    		document.getElementById(id).submit();
-    	}
-    </script>
-    
  	<%@ include file="/WEB-INF/common/footer.jsp"%>
  	

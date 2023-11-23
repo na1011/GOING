@@ -21,7 +21,6 @@ public class ItemDetailServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Long id = Long.parseLong(request.getParameter("itemId"));
-		System.out.println("id = " + id);
 		ItemVO item = itemRepository.findById(id);
 
 		request.setAttribute("itemDetail", item);
