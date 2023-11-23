@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-nav">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li>상세검색</li>
                     </ul>
                 </div>
@@ -234,7 +234,12 @@
                                                     	</c:if>
                                                     
 	                                                    <c:forEach var="num" begin="${startPage }" end="${endPage}">
-	                                                        <li><a href="/search/main?page=${num}">${num}</a></li>
+                                                            <c:if test="${currentPage != num}">
+	                                                            <li><a href="/search/main?page=${num}">${num}</a></li>
+                                                            </c:if>
+                                                            <c:if test="${currentPage == num}">
+	                                                            <li class="active"><a href="/search/main?page=${num}">${num}</a></li>
+                                                            </c:if>
 	                                                    </c:forEach>
 	                                                    
 	                                                    <c:if test="${next}">

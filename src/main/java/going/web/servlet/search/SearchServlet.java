@@ -25,7 +25,7 @@ public class SearchServlet extends HttpServlet {
 		
 		List<ItemVO> findAll = itemRepository.findAll();
 		
-		int page = Integer.valueOf(Optional.ofNullable(request.getParameter("page")).orElse("1"));
+		int page = Integer.parseInt(Optional.ofNullable(request.getParameter("page")).orElse("1"));
 		int allSize = findAll.size();
 		int displayCount = 3;
 
@@ -60,11 +60,12 @@ public class SearchServlet extends HttpServlet {
 			endPage = pageNum;
 		}
 		
-		boolean prev = startPage == 1 ? false : true;
-		boolean next = endPage < pageNum ? true : false;
+		boolean prev = startPage != 1;
+		boolean next = endPage < pageNum;
 
 
 		// 뷰 렌더링
+		request.setAttribute("currentPage", page);
 		request.setAttribute("allSize", allSize);
 		request.setAttribute("startIndex", startIndex);
 		request.setAttribute("endIndex", endIndex);

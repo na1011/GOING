@@ -64,7 +64,7 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a class="active" href="/"
+                                        <a href="/"
                                             aria-label="Toggle navigation">Home</a>
                                     </li>
                                     <li class="nav-item">
