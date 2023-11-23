@@ -2,7 +2,6 @@
   <artifact type="exploded-war" name="going">
     <output-path>$PROJECT_DIR$/build/classes/going</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="going/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="going" />
@@ -11,6 +10,7 @@
           <element id="library" level="module" name="jstl-1.2.jar" module-name="going" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="going/web/Web" />
     </root>
   </artifact>
 </component>

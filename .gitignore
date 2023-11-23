@@ -14,6 +14,18 @@ local.properties
 .loadpath
 .recommenders
 
+### Intellij ###
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/sonarIssues.xml
+.idea/**/markdown-navigator.xml
+.idea/**/markdown-navigator-enh.xml
+.idea/**/markdown-navigator/
+.idea/$CACHE_FILE$
+
 # External tool builders
 .externalToolBuilders/
 
