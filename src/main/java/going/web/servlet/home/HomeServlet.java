@@ -12,7 +12,6 @@ import going.domain.view.MyView;
 
 @WebServlet("/")
 public class HomeServlet extends HttpServlet {
-
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
