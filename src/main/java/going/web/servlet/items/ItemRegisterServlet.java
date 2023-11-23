@@ -33,5 +33,4 @@ public class ItemRegisterServlet extends HttpServlet {
 		
 		response.sendRedirect("/search/main");
 	}
-
 }
