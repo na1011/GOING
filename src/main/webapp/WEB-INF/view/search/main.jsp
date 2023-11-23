@@ -189,14 +189,12 @@
                                             <!-- 검색 결과 시작 -->
                                             
                                             <c:forEach var="trv" items="${itemList}">
-                                            <form action="${pageContext.request.contextPath}/item/detail" method="get" name="${trv.id}">
-                                            <input type="hidden" name=itemId value=${trv.id}>
                                             <div class="col-lg-12 col-md-12 col-12">
                                                 <div class="single-item-grid">
                                                     <div class="row align-items-center">
                                                         <div class="col-lg-5 col-md-7 col-12">
                                                             <div class="image">
-                                                                <a href="javascript:void(0);" onclick="document.forms['${trv.id}'].submit();"><img src="${pageContext.request.contextPath}/resources/images/search/japan.png" alt="#"></a>
+                                                                <a href="/item/detail?itemId=${trv.id}"><img src="${pageContext.request.contextPath}/resources/images/search/japan.png" alt="#"></a>
                                                                 <i class=" cross-badge lni lni-bolt"></i>
                                                                 <span class="flat-badge sale">할인</span>
                                                             </div>
@@ -205,9 +203,9 @@
                                                             <div class="content">
                                                                 <a href="javascript:void(0)" class="tag">해외여행</a>
                                                                 <h3 class="title">
-                                                                    <a href="javascript:void(0);" onclick="document.forms['${trv.id}'].submit();">${trv.itemName}</a>
+                                                                    <a href="/item/detail?itemId=${trv.id}">${trv.itemName}</a>
                                                                 </h3>
-                                                                <p class="location"><a href="javascript:void(0);" onclick="document.forms['${trv.id}'].submit();">
+                                                                <p class="location"><a href="/item/detail?itemId=${trv.id}">
                                                                 		<i class="lni lni-map-marker">
                                                                         </i>삿포로,오타루,후라노,비에이</a></p>
                                                                 <ul class="info">
@@ -220,8 +218,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
-                                            </form>
                                             </c:forEach>
                                             
                                             <!-- 검색 결과 끝 -->

@@ -62,7 +62,9 @@ public class SearchServlet extends HttpServlet {
 		
 		boolean prev = startPage == 1 ? false : true;
 		boolean next = endPage < pageNum ? true : false;
-		
+
+
+		// 뷰 렌더링
 		request.setAttribute("allSize", allSize);
 		request.setAttribute("startIndex", startIndex);
 		request.setAttribute("endIndex", endIndex);
