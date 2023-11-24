@@ -1,10 +1,6 @@
 package going.domain.member;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class MemberRepository {
 
@@ -12,7 +8,6 @@ public class MemberRepository {
 	private static long sequence = 0L;
 	
 	private static final MemberRepository instance = new MemberRepository();
-	
 	public static MemberRepository getInstance() {
 		return instance;
 	}
@@ -41,6 +36,23 @@ public class MemberRepository {
 	
 	public List<MemberVO> findAll() {
 		return new ArrayList<>(store.values());
+	}
+
+	public int cartSave(Long memberId, Long itemId) {
+		MemberVO member = findById(memberId);
+		Set<Long> cart = member.getCart();
+
+		if (!cart.contains(itemId)) {
+			cart.add(itemId);
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
+	public List<Long> getCartList(Long id) {
+		MemberVO member = findById(id);
+		return new ArrayList<>(member.getCart());
 	}
 	
 	public void clearStore() {

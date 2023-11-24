@@ -1,11 +1,18 @@
 package going.domain.member;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Set;
+
+@Getter @Setter
 public class MemberVO {
 	
 	private Long id;
 	private String email;
 	private String password;
 	private Role role;
+	private Set<Long> cart;
 	
 	public MemberVO() {}
 
@@ -14,37 +21,4 @@ public class MemberVO {
 		this.password = password;
 		this.role = role;
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	public Role getRole() {
-		return role;
-	}
-	
-	public void setRole(Role role) {
-		this.role = role;
-	}
-
 }

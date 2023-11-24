@@ -4155,6 +4155,12 @@ blockquote .shape {
   border-color: transparent;
 }
 
+.single-item-grid .content .info .like-filled {
+  color: #fff;
+  background: #d20d0d;
+  border-color: transparent;
+}
+
 /*======================================
     Browse Cities CSS
 ========================================*/

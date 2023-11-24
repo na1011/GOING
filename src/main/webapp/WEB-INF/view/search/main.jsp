@@ -210,7 +210,7 @@
                                                                         </i>삿포로,오타루,후라노,비에이</a></p>
                                                                     <ul class="info">
                                                                         <li class="price"><fmt:formatNumber value="${trv.price}" pattern="#,###" />원</li>
-                                                                        <li class="like"><a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+                                                                        <li class="like"><a href="/item/cart/add?itemId=${trv.id}"><i class="lni lni-heart"></i></a>
                                                                         </li>
                                                                     </ul>
                                                                 </div>
