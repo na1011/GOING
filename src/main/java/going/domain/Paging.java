@@ -1,5 +1,8 @@
 package going.domain;
 
+import lombok.Getter;
+
+@Getter
 public class Paging {
 
     // 현재 페이지와 컨텐츠 총 갯수
@@ -60,35 +63,4 @@ public class Paging {
         next = endPage < pageNum;
     }
 
-    public int getAllSize() {
-        return allSize;
-    }
-
-    public int getPageNum() {
-        return pageNum;
-    }
-
-    public int getEndIndex() {
-        return endIndex;
-    }
-
-    public int getStartIndex() {
-        return startIndex;
-    }
-
-    public int getEndPage() {
-        return endPage;
-    }
-
-    public int getStartPage() {
-        return startPage;
-    }
-
-    public boolean isPrev() {
-        return prev;
-    }
-
-    public boolean isNext() {
-        return next;
-    }
 }
