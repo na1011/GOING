@@ -32,8 +32,8 @@
                     <!-- Start Single Widget -->
                     <div class="single-widget search">
                         <h3>상세조건</h3>
-                        <form action="#">
-                            <input type="text" placeholder="지역, 패키지명...">
+                        <form action="/search/result" method="get">
+                            <input type="text" name="searchTitle" placeholder="지역, 패키지명...">
                             <button type="submit"><i class="lni lni-search-alt"></i></button>
                         </form>
                     </div>
