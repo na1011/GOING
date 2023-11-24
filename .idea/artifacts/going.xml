@@ -8,6 +8,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="module" name="jstl-1.2.jar" module-name="going" />
+          <element id="library" level="project" name="lombok" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="going/web/Web" />
