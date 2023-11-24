@@ -27,12 +27,6 @@ public class SearchServlet extends HttpServlet {
 		int page = Integer.parseInt(Optional.ofNullable(request.getParameter("page")).orElse("1"));
 		Paging paging = new Paging(page, findAll.size(), 3, 5);
 
-		// 전체 페이지 수보다 높은 페이지를 요청할 경우 1페이지로 리다이렉트
-		if (page > paging.getPageNum()) {
-			response.sendRedirect("/search/main");
-			return;
-		}
-
 		List<ItemVO> itemList = new ArrayList<>(3);
 		for(int i=paging.getStartIndex(); i<=paging.getEndIndex(); i++) {
 			itemList.add(findAll.get(i-1));
@@ -41,7 +35,6 @@ public class SearchServlet extends HttpServlet {
 		// 뷰 렌더링
 		request.setAttribute("itemList", itemList);
 		request.setAttribute("paging", paging);
-		
 		MyView mv = new MyView(request.getRequestURI());
 		mv.render(request, response);
 	}

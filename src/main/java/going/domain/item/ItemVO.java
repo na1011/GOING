@@ -6,8 +6,6 @@ public class ItemVO {
 	private String itemName;
 	private Integer price;
 	
-	public ItemVO() {}
-	
 	public ItemVO(String itemName, Integer price) {
 		this.itemName = itemName;
 		this.price = price;

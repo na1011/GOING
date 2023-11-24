@@ -34,27 +34,30 @@ public class Paging {
     }
 
     public void pageCalculate() {
+        // 전체 페이징 갯수
         pageNum = (int) Math.ceil( (double)allSize / (double)displayCount );
+
+        // 한 페이지에 표시될 컨텐츠의 시작과 끝 인덱스
         endIndex = page * displayCount;
         startIndex = endIndex - (displayCount - 1);
 
+        // 컨텐츠의 마지막 번호를 총 컨텐츠 갯수와 맞춤
         if (endIndex > allSize) {
             endIndex = allSize;
         }
 
+        // 페이징을 n페이지 단위로 처리
         endPage = (int) Math.ceil( (double)page / (double)displayPaging ) * displayPaging;
         startPage = endPage - (displayPaging - 1);
 
+        // 페이징의 마지막 번호를 총 페이징 갯수와 맞춤
         if (endPage > pageNum) {
             endPage = pageNum;
         }
 
+        // 페이징의 이전과 다음버튼 처리
         prev = startPage != 1;
         next = endPage < pageNum;
-    }
-
-    public int getPage() {
-        return page;
     }
 
     public int getAllSize() {
