@@ -16,14 +16,15 @@ import java.util.List;
 import java.util.Optional;
 
 @WebServlet("/search/main")
-public class SearchServlet extends HttpServlet {
-	
+public class SearchMainServlet extends HttpServlet {
+
 	ItemRepository itemRepository = ItemRepository.getInstance();
-	
+
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		List<ItemVO> findAll = itemRepository.findAll();
+
 		int page = Integer.parseInt(Optional.ofNullable(request.getParameter("page")).orElse("1"));
 		Paging paging = new Paging(page, findAll.size(), 3, 5);
 
