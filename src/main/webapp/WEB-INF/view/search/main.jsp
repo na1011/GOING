@@ -32,8 +32,8 @@
                         <!-- Start Single Widget -->
                         <div class="single-widget search">
                             <h3>상세조건</h3>
-                            <form action="#">
-                                <input type="text" placeholder="지역, 패키지명...">
+                            <form action="/search/result" method="get">
+                                <input type="text" name="searchTitle" placeholder="지역, 패키지명...">
                                 <button type="submit"><i class="lni lni-search-alt"></i></button>
                             </form>
                         </div>
@@ -159,7 +159,7 @@
                     </div>
                 </div>
                 <!-- 검색 메뉴 끝 -->
-                
+
                 <div class="col-lg-9 col-md-8 col-12">
                     <div class="category-grid-list">
                         <div class="row">
@@ -173,8 +173,8 @@
                                             <nav>
                                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                                     <button class="nav-link active" id="nav-grid-tab"
-                                                        data-bs-toggle="tab" data-bs-target="#nav-grid" type="button"
-                                                        role="tab" aria-controls="nav-grid" aria-selected="true"><i
+                                                            data-bs-toggle="tab" data-bs-target="#nav-grid" type="button"
+                                                            role="tab" aria-controls="nav-grid" aria-selected="true"><i
                                                             class="lni lni-grid-alt"></i></button>
                                                 </div>
                                             </nav>
@@ -183,84 +183,71 @@
                                 </div>
                                 <div class="tab-content" id="nav-tabContent">
                                     <div class="tab-pane fade show active" id="nav-grid" role="tabpanel"
-                                        aria-labelledby="nav-list-tab">
+                                         aria-labelledby="nav-list-tab">
                                         <div class="row">
-                                            
+
                                             <!-- 검색 결과 시작 -->
-                                            
+
                                             <c:forEach var="trv" items="${itemList}">
-                                            <div class="col-lg-12 col-md-12 col-12">
-                                                <div class="single-item-grid">
-                                                    <div class="row align-items-center">
-                                                        <div class="col-lg-5 col-md-7 col-12">
-                                                            <div class="image">
-                                                                <a href="/item/detail?itemId=${trv.id}"><img src="${pageContext.request.contextPath}/resources/images/search/japan.png" alt="#"></a>
-                                                                <i class=" cross-badge lni lni-bolt"></i>
-                                                                <span class="flat-badge sale">할인</span>
+                                                <div class="col-lg-12 col-md-12 col-12">
+                                                    <div class="single-item-grid">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-lg-5 col-md-7 col-12">
+                                                                <div class="image">
+                                                                    <a href="/item/detail?itemId=${trv.id}"><img src="${pageContext.request.contextPath}/resources/images/search/japan.png" alt="#"></a>
+                                                                    <i class=" cross-badge lni lni-bolt"></i>
+                                                                    <span class="flat-badge sale">할인</span>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-lg-7 col-md-5 col-12">
-                                                            <div class="content">
-                                                                <a href="javascript:void(0)" class="tag">해외여행</a>
-                                                                <h3 class="title">
-                                                                    <a href="/item/detail?itemId=${trv.id}">${trv.itemName}</a>
-                                                                </h3>
-                                                                <p class="location"><a href="/item/detail?itemId=${trv.id}">
-                                                                		<i class="lni lni-map-marker">
+                                                            <div class="col-lg-7 col-md-5 col-12">
+                                                                <div class="content">
+                                                                    <a href="javascript:void(0)" class="tag">해외여행</a>
+                                                                    <h3 class="title">
+                                                                        <a href="/item/detail?itemId=${trv.id}">${trv.itemName}</a>
+                                                                    </h3>
+                                                                    <p class="location"><a href="/item/detail?itemId=${trv.id}">
+                                                                        <i class="lni lni-map-marker">
                                                                         </i>삿포로,오타루,후라노,비에이</a></p>
-                                                                <ul class="info">
-                                                                    <li class="price"><fmt:formatNumber value="${trv.price}" pattern="#,###" />원</li>
-                                                                    <li class="like"><a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
-                                                                    </li>
-                                                                </ul>
+                                                                    <ul class="info">
+                                                                        <li class="price"><fmt:formatNumber value="${trv.price}" pattern="#,###" />원</li>
+                                                                        <li class="like"><a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
                                             </c:forEach>
-                                            
+
                                             <!-- 검색 결과 끝 -->
-                                            
+
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
-                                            
+
                                                 <!-- 페이징 시작 -->
                                                 <div class="pagination center">
                                                     <ul class="pagination-list">
-                                                    	<c:if test="${paging.prev}">
-	                                                    	<li><a href="/search/main?page=${paging.startPage - 1}"><i class="lni lni-chevron-left"></i></a></li>
-                                                    	</c:if>
-                                                    
-	                                                    <c:forEach var="num" begin="${paging.startPage }" end="${paging.endPage}">
+                                                        <c:if test="${paging.prev}">
+                                                            <li><a href="/search/main?page=${paging.startPage - 1}"><i class="lni lni-chevron-left"></i></a></li>
+                                                        </c:if>
+
+                                                        <c:forEach var="num" begin="${paging.startPage }" end="${paging.endPage}">
                                                             <c:if test="${paging.page != num}">
-	                                                            <li><a href="/search/main?page=${num}">${num}</a></li>
+                                                                <li><a href="/search/main?page=${num}">${num}</a></li>
                                                             </c:if>
                                                             <c:if test="${paging.page == num}">
-	                                                            <li class="active"><a href="/search/main?page=${num}">${num}</a></li>
+                                                                <li class="active"><a href="/search/main?page=${num}">${num}</a></li>
                                                             </c:if>
-	                                                    </c:forEach>
-	                                                    
-	                                                    <c:if test="${paging.next}">
-	                                                        <li><a href="/search/main?page=${paging.endPage + 1}"><i class="lni lni-chevron-right"></i></a></li>
-	                                                    </c:if>
+                                                        </c:forEach>
+
+                                                        <c:if test="${paging.next}">
+                                                            <li><a href="/search/main?page=${paging.endPage + 1}"><i class="lni lni-chevron-right"></i></a></li>
+                                                        </c:if>
                                                     </ul>
                                                 </div>
-                                                <!-- 페이징 끝 -->
-                                            
-                                                <!--  
-                                                <div class="pagination left">
-                                                    <ul class="pagination-list">
-                                                        <li><a href="javascript:void(0)">1</a></li>
-                                                        <li class="active"><a href="javascript:void(0)">2</a></li>
-                                                        <li><a href="javascript:void(0)">3</a></li>
-                                                        <li><a href="javascript:void(0)">4</a></li>
-                                                        <li><a href="javascript:void(0)"><i class="lni lni-chevron-right"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                  -->
-                                                
+
                                             </div>
                                         </div>
                                     </div>

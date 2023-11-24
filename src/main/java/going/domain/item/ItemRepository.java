@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ItemRepository {
 	
@@ -17,8 +18,9 @@ public class ItemRepository {
 	}
 	
 	private ItemRepository() {
-		for(int i=1; i<=23; i++) {
+		for(int i=1; i<=11; i++) {
 			save(new ItemVO("테스트", i));
+			save(new ItemVO("검색용", i*i));
 		}
 	}
 
@@ -35,7 +37,13 @@ public class ItemRepository {
 	public List<ItemVO> findAll() {
 		return new ArrayList<>(store.values());
 	}
-	
+
+	public List<ItemVO> findByTitle(String title) {
+		List<ItemVO> result = findAll().stream()
+				.filter(i -> i.getItemName().contains(title))
+				.collect(Collectors.toList());
+		return  result;
+	}
 	
 	public void clearStore() {
 		store.clear();
