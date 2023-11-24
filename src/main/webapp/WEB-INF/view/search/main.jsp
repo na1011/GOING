@@ -167,7 +167,7 @@
                                 <div class="category-grid-topbar">
                                     <div class="row align-items-center">
                                         <div class="col-lg-6 col-md-6 col-12">
-                                            <h3 class="title">발견된 ${allSize }개의 항목 중 ${startIndex }-${endIndex }개를 보여줍니다</h3>
+                                            <h3 class="title">발견된 ${paging.allSize}개의 항목 중 ${paging.startIndex }-${paging.endIndex }개를 보여줍니다</h3>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <nav>
@@ -229,21 +229,21 @@
                                                 <!-- 페이징 시작 -->
                                                 <div class="pagination center">
                                                     <ul class="pagination-list">
-                                                    	<c:if test="${prev}">
-	                                                    	<li><a href="/search/main?page=${startPage - 1}"><i class="lni lni-chevron-left"></i></a></li>
+                                                    	<c:if test="${paging.prev}">
+	                                                    	<li><a href="/search/main?page=${paging.startPage - 1}"><i class="lni lni-chevron-left"></i></a></li>
                                                     	</c:if>
                                                     
-	                                                    <c:forEach var="num" begin="${startPage }" end="${endPage}">
-                                                            <c:if test="${currentPage != num}">
+	                                                    <c:forEach var="num" begin="${paging.startPage }" end="${paging.endPage}">
+                                                            <c:if test="${paging.page != num}">
 	                                                            <li><a href="/search/main?page=${num}">${num}</a></li>
                                                             </c:if>
-                                                            <c:if test="${currentPage == num}">
+                                                            <c:if test="${paging.page == num}">
 	                                                            <li class="active"><a href="/search/main?page=${num}">${num}</a></li>
                                                             </c:if>
 	                                                    </c:forEach>
 	                                                    
-	                                                    <c:if test="${next}">
-	                                                        <li><a href="/search/main?page=${endPage + 1}"><i class="lni lni-chevron-right"></i></a></li>
+	                                                    <c:if test="${paging.next}">
+	                                                        <li><a href="/search/main?page=${paging.endPage + 1}"><i class="lni lni-chevron-right"></i></a></li>
 	                                                    </c:if>
                                                     </ul>
                                                 </div>
