@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import going.domain.member.MemberVO;
-import going.domain.member.SessionConst;
-
 @WebServlet("/logout")
 public class LogoutServlet extends	HttpServlet {
 

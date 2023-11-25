@@ -3,7 +3,7 @@ package going.web.servlet.shop;
 import going.domain.item.ItemRepository;
 import going.domain.item.ItemVO;
 import going.domain.member.MemberVO;
-import going.domain.member.SessionConst;
+import going.domain.ConstField;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,19 +27,27 @@ public class CartAddServlet extends HttpServlet {
         List<MemberVO> likedList = findItem.getLikedBy();
 
         HttpSession session = request.getSession(false);
-        MemberVO loginMember = (MemberVO) session.getAttribute(SessionConst.LOGIN_MEMBER);
+        MemberVO loginMember = (MemberVO) session.getAttribute(ConstField.LOGIN_MEMBER);
         List<ItemVO> cartList = loginMember.getCartList();
 
         if (!likedList.contains(loginMember)) {
-            findItem.setLikes(findItem.getLikes() + 1);
             likedList.add(loginMember);
             cartList.add(findItem);
+
+            loginMember.setCartList(cartList);
+            findItem.setLikedBy(likedList);
+            findItem.setLikes(findItem.getLikes() + 1);
+
             response.getWriter().write("좋아요");
 
         } else {
-            findItem.setLikes(findItem.getLikes() - 1);
             likedList.remove(loginMember);
             cartList.remove(findItem);
+
+            loginMember.setCartList(cartList);
+            findItem.setLikedBy(likedList);
+            findItem.setLikes(findItem.getLikes() - 1);
+
             response.getWriter().write("취소");
         }
     }

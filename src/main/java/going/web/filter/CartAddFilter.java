@@ -1,14 +1,12 @@
 package going.web.filter;
 
-import going.domain.member.SessionConst;
+import going.domain.ConstField;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebFilter("/item/cart/add")
 public class CartAddFilter implements Filter {
@@ -18,7 +16,7 @@ public class CartAddFilter implements Filter {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         try {
             HttpSession session = httpRequest.getSession(false);
-            if(session == null || session.getAttribute(SessionConst.LOGIN_MEMBER) == null) {
+            if(session == null || session.getAttribute(ConstField.LOGIN_MEMBER) == null) {
                 return;
             }
             chain.doFilter(request, response);
