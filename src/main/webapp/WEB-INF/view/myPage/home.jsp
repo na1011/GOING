@@ -86,18 +86,18 @@
                                 <ul>
                                     <%-- 찜한 상품 리스트 시작--%>
                                     <c:forEach var="trv" items="${cartList}">
-                                        <li>
+                                        <li id="like${trv.id}">
                                             <div class="image">
-                                                <a href="javascript:void(0)"><img
+                                                <a href="/item/detail?itemId=${trv.id}"><img
                                                         src="${pageContext.request.contextPath}/resources/images/MyPage/trip1.jpg"
                                                         alt="#"></a>
                                             </div>
-                                            <a href="javascript:void(0)" class="title">
+                                            <a href="/item/detail?itemId=${trv.id}" class="title">
                                                 <h6>${trv.itemName}</h6>
                                             </a>
                                             <span class="time"><fmt:formatNumber
                                                     value="${trv.price}" pattern="#,###"/>원~</span>
-                                            <span class="remove"><a href="javascript:void(0)"><i
+                                            <span class="remove"><a href="javascript:void(0)" onclick="heartCheck(${trv.id})"><i
                                                     class="lni lni-close"></i></a></span>
                                         </li>
                                     </c:forEach>
@@ -250,5 +250,23 @@
     </div>
 </section>
 <!-- End Dashboard Section -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+    function heartCheck(itemId) {
+        $.ajax({
+            type: 'POST',
+            url: '/item/cart/add',
+            data: {
+                itemId: itemId
+            },
+
+            success: function (result) {
+                if (result == "취소") {
+                    $('li').remove('#like' + itemId);
+                }
+            }
+        });
+    }
+</script>
 
 <%@ include file="/WEB-INF/common/footer.jsp" %>
