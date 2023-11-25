@@ -23,6 +23,7 @@ public class CartAddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Long itemId = Long.parseLong(request.getParameter("itemId"));
+
         ItemVO findItem = itemRepository.findById(itemId);
         List<MemberVO> likedList = findItem.getLikedBy();
 
@@ -30,19 +31,18 @@ public class CartAddServlet extends HttpServlet {
         MemberVO loginMember = (MemberVO) session.getAttribute(ConstField.LOGIN_MEMBER);
         List<ItemVO> cartList = loginMember.getCartList();
 
-        if (!likedList.contains(loginMember)) {
-            likedList.add(loginMember);
+        if (!cartList.contains(findItem)) {
             cartList.add(findItem);
+            likedList.add(loginMember);
 
             loginMember.setCartList(cartList);
             findItem.setLikedBy(likedList);
             findItem.setLikes(findItem.getLikes() + 1);
 
             response.getWriter().write("좋아요");
-
         } else {
-            likedList.remove(loginMember);
             cartList.remove(findItem);
+            likedList.remove(loginMember);
 
             loginMember.setCartList(cartList);
             findItem.setLikedBy(likedList);

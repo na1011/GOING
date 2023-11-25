@@ -287,7 +287,9 @@
         $.ajax({
             type: 'POST',
             url: '/item/cart/add',
-            data: {itemId: itemId},
+            data: {
+                itemId: itemId
+            },
 
             success: function (result) {
                 if (result == "좋아요") {
