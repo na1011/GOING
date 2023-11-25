@@ -24,7 +24,7 @@ public class SearchResultServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String searchTitle = request.getParameter("searchTitle");
-        List<ItemVO> result = itemRepository.findByTitle(searchTitle);
+        List<ItemVO> result = itemRepository.searchByTitle(searchTitle);
 
         int page = Integer.parseInt(Optional.ofNullable(request.getParameter("page")).orElse("1"));
         Paging paging = new Paging(page, result.size(), 3, 5);

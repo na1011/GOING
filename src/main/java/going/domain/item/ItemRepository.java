@@ -12,7 +12,6 @@ public class ItemRepository {
 	private static long sequence = 0L;
 	
 	private static final ItemRepository instance = new ItemRepository();
-	
 	public static ItemRepository getInstance() {
 		return instance;
 	}
@@ -38,13 +37,12 @@ public class ItemRepository {
 		return new ArrayList<>(store.values());
 	}
 
-	public List<ItemVO> findByTitle(String title) {
-		List<ItemVO> result = findAll().stream()
+	public List<ItemVO> searchByTitle(String title) {
+		return findAll().stream()
 				.filter(i -> i.getItemName().contains(title))
 				.collect(Collectors.toList());
-		return  result;
 	}
-	
+
 	public void clearStore() {
 		store.clear();
 	}

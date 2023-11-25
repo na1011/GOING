@@ -24,8 +24,11 @@ public class LoginCheckFilter implements Filter {
 			HttpSession session = httpRequest.getSession(false);
 			
 			if(session == null || session.getAttribute(SessionConst.LOGIN_MEMBER) == null) {
+				httpRequest.setAttribute("msg", "로그인이 필요한 페이지 입니다.");
+				httpRequest.setAttribute("url", "/member/login?addr=" + requestURI);
 
-				httpResponse.sendRedirect("/member/login?addr=" + requestURI);
+				RequestDispatcher dispatcher = httpRequest.getRequestDispatcher("/WEB-INF/view/alert.jsp");
+				dispatcher.forward(httpRequest, httpResponse);
 				return;
 			}
 			chain.doFilter(request, response);

@@ -1,32 +1,26 @@
 package going.domain.item;
 
+import going.domain.member.MemberVO;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Getter @Setter
 public class ItemVO {
 
 	private Long id;
 	private String itemName;
 	private Integer price;
+	private int likes;
+	private List<MemberVO> likedBy;
 	
 	public ItemVO(String itemName, Integer price) {
 		this.itemName = itemName;
 		this.price = price;
+		this.likes = 0;
+		this.likedBy = new ArrayList<>();
 	}
-	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getItemName() {
-		return itemName;
-	}
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
-	}
-	public Integer getPrice() {
-		return price;
-	}
-	public void setPrice(Integer price) {
-		this.price = price;
-	}
+
 }

@@ -1,10 +1,8 @@
 package going.domain.member;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import going.domain.item.ItemVO;
+
+import java.util.*;
 
 public class MemberRepository {
 
@@ -12,7 +10,6 @@ public class MemberRepository {
 	private static long sequence = 0L;
 	
 	private static final MemberRepository instance = new MemberRepository();
-	
 	public static MemberRepository getInstance() {
 		return instance;
 	}
