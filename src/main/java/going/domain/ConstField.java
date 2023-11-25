@@ -1,6 +1,6 @@
-package going.domain.member;
+package going.domain;
 
-public class SessionConst {
+public class ConstField {
 	
 	public static final String LOGIN_MEMBER = "loginMember";
 

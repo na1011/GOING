@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import going.domain.member.MemberRepository;
 import going.domain.member.MemberVO;
-import going.domain.member.SessionConst;
+import going.domain.ConstField;
 import going.domain.view.MyView;
 
 @WebServlet("/member/login")
@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		
 		if (session != null) {
-			MemberVO loginMember = (MemberVO) session.getAttribute(SessionConst.LOGIN_MEMBER);
+			MemberVO loginMember = (MemberVO) session.getAttribute(ConstField.LOGIN_MEMBER);
 			if (loginMember != null) {
 				response.sendRedirect("/");
 				return;
@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
 		
 		if (loginMember != null) {
 			HttpSession session = request.getSession();
-			session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
+			session.setAttribute(ConstField.LOGIN_MEMBER, loginMember);
 			response.sendRedirect(addr != null ? "/" + addr : "/");
 			return;
 		}

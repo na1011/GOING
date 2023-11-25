@@ -1,6 +1,6 @@
 package going.web.filter;
 
-import going.domain.member.SessionConst;
+import going.domain.ConstField;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -23,7 +23,7 @@ public class LoginCheckFilter implements Filter {
 		try {
 			HttpSession session = httpRequest.getSession(false);
 			
-			if(session == null || session.getAttribute(SessionConst.LOGIN_MEMBER) == null) {
+			if(session == null || session.getAttribute(ConstField.LOGIN_MEMBER) == null) {
 				httpRequest.setAttribute("msg", "로그인이 필요한 페이지 입니다.");
 				httpRequest.setAttribute("url", "/member/login?addr=" + requestURI);
 
