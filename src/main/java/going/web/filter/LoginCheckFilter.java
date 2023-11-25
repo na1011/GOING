@@ -13,22 +13,20 @@ import java.io.IOException;
 public class LoginCheckFilter implements Filter {
 
 	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
 			throws IOException, ServletException {
 
-		HttpServletRequest httpRequest = (HttpServletRequest) request;
-		HttpServletResponse httpResponse = (HttpServletResponse) response;
-		String requestURI = httpRequest.getRequestURI().substring(1);
+		HttpServletRequest request = (HttpServletRequest) req;
+		HttpServletResponse response = (HttpServletResponse) resp;
+		String requestURI = request.getRequestURI();
 		
 		try {
-			HttpSession session = httpRequest.getSession(false);
+			HttpSession session = request.getSession(false);
 			
 			if(session == null || session.getAttribute(ConstField.LOGIN_MEMBER) == null) {
-				httpRequest.setAttribute("msg", "로그인이 필요한 페이지 입니다.");
-				httpRequest.setAttribute("url", "/member/login?addr=" + requestURI);
-
-				RequestDispatcher dispatcher = httpRequest.getRequestDispatcher("/WEB-INF/view/alert.jsp");
-				dispatcher.forward(httpRequest, httpResponse);
+				request.setAttribute("msg", "로그인이 필요한 페이지 입니다.");
+				request.setAttribute("url", "/member/login?addr=" + requestURI);
+				request.getRequestDispatcher(ConstField.ALERT_PAGE).forward(request, response);
 				return;
 			}
 			chain.doFilter(request, response);

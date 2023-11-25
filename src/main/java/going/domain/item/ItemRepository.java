@@ -18,7 +18,7 @@ public class ItemRepository {
 	
 	private ItemRepository() {
 		for(int i=1; i<=11; i++) {
-			save(new ItemVO("테스트", i));
+			save(new ItemVO("테스트", i*i*i));
 			save(new ItemVO("검색용", i*i));
 		}
 	}

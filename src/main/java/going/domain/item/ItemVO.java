@@ -22,5 +22,4 @@ public class ItemVO {
 		this.likes = 0;
 		this.likedBy = new ArrayList<>();
 	}
-
 }
