@@ -17,6 +17,7 @@ public class CartAddFilter implements Filter {
         try {
             HttpSession session = httpRequest.getSession(false);
             if(session == null || session.getAttribute(ConstField.LOGIN_MEMBER) == null) {
+                response.getWriter().write("비로그인");
                 return;
             }
             chain.doFilter(request, response);
