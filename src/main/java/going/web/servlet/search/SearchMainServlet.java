@@ -15,16 +15,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 @WebServlet("/search/main")
 public class SearchMainServlet extends HttpServlet {
 
 	ItemRepository itemRepository = ItemRepository.getInstance();
-	MemberRepository memberRepository = MemberRepository.getInstance();
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,18 +37,6 @@ public class SearchMainServlet extends HttpServlet {
 		for(int i=paging.getStartIndex(); i<=paging.getEndIndex(); i++) {
 			itemList.add(findAll.get(i-1));
 		}
-
-
-		// 회원이면 찜한 상품 표시하기
-		HttpSession session = request.getSession(false);
-		if (session != null) {
-			MemberVO loginMember = (MemberVO) session.getAttribute(SessionConst.LOGIN_MEMBER);
-			if (loginMember != null) {
-				Set<Long> cart = loginMember.getCart();
-				
-			}
-		}
-
 
 		// 뷰 렌더링
 		request.setAttribute("itemList", itemList);

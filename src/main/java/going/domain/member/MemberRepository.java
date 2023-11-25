@@ -1,5 +1,7 @@
 package going.domain.member;
 
+import going.domain.item.ItemVO;
+
 import java.util.*;
 
 public class MemberRepository {
@@ -36,23 +38,6 @@ public class MemberRepository {
 	
 	public List<MemberVO> findAll() {
 		return new ArrayList<>(store.values());
-	}
-
-	public int cartSave(Long memberId, Long itemId) {
-		MemberVO member = findById(memberId);
-		Set<Long> cart = member.getCart();
-
-		if (!cart.contains(itemId)) {
-			cart.add(itemId);
-			return 1;
-		} else {
-			return 0;
-		}
-	}
-
-	public List<Long> getCartList(Long id) {
-		MemberVO member = findById(id);
-		return new ArrayList<>(member.getCart());
 	}
 	
 	public void clearStore() {

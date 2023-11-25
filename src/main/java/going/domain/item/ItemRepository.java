@@ -37,7 +37,7 @@ public class ItemRepository {
 		return new ArrayList<>(store.values());
 	}
 
-	public List<ItemVO> findByTitle(String title) {
+	public List<ItemVO> searchByTitle(String title) {
 		return findAll().stream()
 				.filter(i -> i.getItemName().contains(title))
 				.collect(Collectors.toList());

@@ -32,6 +32,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="jstl-1.2" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 9.0.80" level="application_server_libraries" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="lombok" level="project" />
+    <orderEntry type="library" exported="" name="lombok" level="project" />
   </component>
 </module>

@@ -1,9 +1,10 @@
 package going.domain.member;
 
+import going.domain.item.ItemVO;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Set;
+import java.util.*;
 
 @Getter @Setter
 public class MemberVO {
@@ -12,7 +13,7 @@ public class MemberVO {
 	private String email;
 	private String password;
 	private Role role;
-	private Set<Long> cart;
+	private List<ItemVO> cartList;
 	
 	public MemberVO() {}
 
@@ -20,5 +21,6 @@ public class MemberVO {
 		this.email = email;
 		this.password = password;
 		this.role = role;
+		this.cartList = new ArrayList<>();
 	}
 }

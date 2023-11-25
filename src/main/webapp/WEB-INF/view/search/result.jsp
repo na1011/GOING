@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 
-<%@ include file="/WEB-INF/common/header.jsp"%>
+<%@ include file="/WEB-INF/common/header.jsp" %>
 
 <!-- Start Breadcrumbs -->
 <div class="breadcrumbs overlay">
@@ -121,7 +121,7 @@
                                value="10" onchange="rangePrimary.value=value">
                         <div class="range-inner">
                             <label>$</label>
-                            <input type="text" id="rangePrimary" placeholder="100" />
+                            <input type="text" id="rangePrimary" placeholder="100"/>
                         </div>
                     </div>
                     <!-- End Single Widget -->
@@ -167,7 +167,8 @@
                             <div class="category-grid-topbar">
                                 <div class="row align-items-center">
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <h3 class="title">발견된 ${paging.allSize}개의 항목 중 ${paging.startIndex }-${paging.endIndex }개를 보여줍니다</h3>
+                                        <h3 class="title">발견된 ${paging.allSize}개의 항목
+                                            중 ${paging.startIndex }-${paging.endIndex }개를 보여줍니다</h3>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <nav>
@@ -194,7 +195,9 @@
                                                     <div class="row align-items-center">
                                                         <div class="col-lg-5 col-md-7 col-12">
                                                             <div class="image">
-                                                                <a href="/item/detail?itemId=${trv.id}"><img src="${pageContext.request.contextPath}/resources/images/search/japan.png" alt="#"></a>
+                                                                <a href="/item/detail?itemId=${trv.id}"><img
+                                                                        src="${pageContext.request.contextPath}/resources/images/search/japan.png"
+                                                                        alt="#"></a>
                                                                 <i class=" cross-badge lni lni-bolt"></i>
                                                                 <span class="flat-badge sale">할인</span>
                                                             </div>
@@ -205,13 +208,27 @@
                                                                 <h3 class="title">
                                                                     <a href="/item/detail?itemId=${trv.id}">${trv.itemName}</a>
                                                                 </h3>
-                                                                <p class="location"><a href="/item/detail?itemId=${trv.id}">
+                                                                <p class="location"><a
+                                                                        href="/item/detail?itemId=${trv.id}">
                                                                     <i class="lni lni-map-marker">
                                                                     </i>삿포로,오타루,후라노,비에이</a></p>
                                                                 <ul class="info">
-                                                                    <li class="price"><fmt:formatNumber value="${trv.price}" pattern="#,###" />원</li>
-                                                                    <li class="like"><a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+                                                                    <li class="price"><fmt:formatNumber
+                                                                            value="${trv.price}" pattern="#,###"/>원
                                                                     </li>
+                                                                    <c:if test="${sessionScope.loginMember eq null or !trv.likedBy.contains(sessionScope.loginMember)}">
+                                                                        <li id="like${trv.id}" class="like"><a
+                                                                                href="javascript:void(0)"
+                                                                                onclick="heartCheck(${trv.id})"><i
+                                                                                class="lni lni-heart"></i></a></li>
+                                                                    </c:if>
+
+                                                                    <c:if test="${trv.likedBy.contains(sessionScope.loginMember)}">
+                                                                        <li id="like${trv.id}" class="like-filled"><a
+                                                                                href="javascript:void(0)"
+                                                                                onclick="heartCheck(${trv.id})"><i
+                                                                                class="lni lni-heart"></i></a></li>
+                                                                    </c:if>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -230,20 +247,29 @@
                                             <div class="pagination center">
                                                 <ul class="pagination-list">
                                                     <c:if test="${paging.prev}">
-                                                        <li><a href="/search/result?searchTitle=${title}&page=${paging.startPage - 1}"><i class="lni lni-chevron-left"></i></a></li>
+                                                        <li>
+                                                            <a href="/search/result?searchTitle=${title}&page=${paging.startPage - 1}"><i
+                                                                    class="lni lni-chevron-left"></i></a></li>
                                                     </c:if>
 
-                                                    <c:forEach var="num" begin="${paging.startPage }" end="${paging.endPage}">
+                                                    <c:forEach var="num" begin="${paging.startPage }"
+                                                               end="${paging.endPage}">
                                                         <c:if test="${paging.page != num}">
-                                                            <li><a href="/search/result?searchTitle=${title}&page=${num}">${num}</a></li>
+                                                            <li>
+                                                                <a href="/search/result?searchTitle=${title}&page=${num}">${num}</a>
+                                                            </li>
                                                         </c:if>
                                                         <c:if test="${paging.page == num}">
-                                                            <li class="active"><a href="/search/result?searchTitle=${title}&page=${num}">${num}</a></li>
+                                                            <li class="active"><a
+                                                                    href="/search/result?searchTitle=${title}&page=${num}">${num}</a>
+                                                            </li>
                                                         </c:if>
                                                     </c:forEach>
 
                                                     <c:if test="${paging.next}">
-                                                        <li><a href="/search/result?searchTitle=${title}&page=${paging.endPage + 1}"><i class="lni lni-chevron-right"></i></a></li>
+                                                        <li>
+                                                            <a href="/search/result?searchTitle=${title}&page=${paging.endPage + 1}"><i
+                                                                    class="lni lni-chevron-right"></i></a></li>
                                                     </c:if>
                                                 </ul>
                                             </div>
@@ -261,4 +287,23 @@
 </section>
 <!-- End Category 마지막 라인-->
 
-<%@ include file="/WEB-INF/common/footer.jsp"%>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+    function heartCheck(itemId) {
+        $.ajax({
+            type: 'POST',
+            url: '/item/cart/add',
+            data: {itemId: itemId},
+
+            success: function (result) {
+                if (result == "좋아요") {
+                    $('#like' + itemId).attr('class', 'like-filled');
+                } else {
+                    $('#like' + itemId).attr('class', 'like');
+                }
+            }
+        });
+    }
+</script>
+
+<%@ include file="/WEB-INF/common/footer.jsp" %>

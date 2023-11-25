@@ -4149,13 +4149,21 @@ blockquote .shape {
   border: 1px solid #eee;
 }
 
-.items-grid .single-grid .content .bottom-content .like:hover {
+.items-grid .single-grid .content .bottom-content .like-filled {
+  float: right;
   color: #fff;
   background: #d20d0d;
   border-color: transparent;
+  font-size: 18px;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  display: block;
+  border-radius: 50%;
 }
 
-.single-item-grid .content .info .like-filled {
+.items-grid .single-grid .content .bottom-content .like:hover {
   color: #fff;
   background: #d20d0d;
   border-color: transparent;
@@ -4473,6 +4481,10 @@ blockquote .shape {
   float: right;
 }
 
+.single-item-grid .content .info .like-filled {
+  float: right;
+}
+
 .single-item-grid .content .info .like a {
   color: #888;
   font-size: 14px;
@@ -4482,6 +4494,19 @@ blockquote .shape {
   text-align: center;
   display: block;
   border: 1px solid #eee;
+  border-radius: 50%;
+}
+
+.single-item-grid .content .info .like-filled a {
+  color: #fff;
+  background: #d20d0d;
+  font-size: 14px;
+  height: 35px;
+  width: 35px;
+  line-height: 35px;
+  text-align: center;
+  display: block;
+  border-color: transparent;
   border-radius: 50%;
 }
 
