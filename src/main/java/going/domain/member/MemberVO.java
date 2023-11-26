@@ -15,8 +15,6 @@ public class MemberVO {
 	private Role role;
 	private List<ItemVO> cartList;
 	
-	public MemberVO() {}
-
 	public MemberVO(String email, String password, Role role) {
 		this.email = email;
 		this.password = password;

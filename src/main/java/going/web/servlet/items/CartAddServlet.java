@@ -1,4 +1,4 @@
-package going.web.servlet.shop;
+package going.web.servlet.items;
 
 import going.domain.item.ItemRepository;
 import going.domain.item.ItemVO;

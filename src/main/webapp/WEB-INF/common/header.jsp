@@ -92,7 +92,7 @@
 	                                <!-- 비로그인 사용자 -->
 	                                <c:if test="${sessionScope.loginMember == null}">
 	                                    <li>
-	                                        <a href="/member/login"><i class="lni lni-enter"></i> 로그인</a>
+	                                        <a href="/member/login?addr=${requestScope['javax.servlet.forward.servlet_path']}"><i class="lni lni-enter"></i> 로그인</a>
 	                                    </li>
 	                                
 	                                    <li>
